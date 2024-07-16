@@ -1,30 +1,21 @@
 const express = require('express')
-const { products } = require('./data')
 
 const app = express()
 
-app.get('/', (req, res) => {
-  res.send('<h1>Home Page</h1> <a href="/api/v1/products/query">products queries</a>')
-})
-app.get('/api/v1/products/query', (req, res) => {
-  const { search, limit } = req.query
-  let sortedProducts = [...products]
-  if (search) {
-    sortedProducts = sortedProducts.filter((product) => {
-      return product.name.startsWith(search.toLowerCase())
-    })
-  }
-  if (limit) {
-    sortedProducts = sortedProducts.slice(0, Number(limit))
-  }
-  if (sortedProducts.length < 1)
-    return res.status(200).json([{ status: true, data: [], message: 'This product does not exit' }])
+const logger = (req, res, next) => {
+  const method = req.method
+  const url = req.url
+  const time = new Date().getFullYear()
+  console.log(method, url, time)
+  next()
+}
 
-  res.status(200).json(sortedProducts)
+app.get('/', logger, (req, res) => {
+  res.send('Home page')
 })
 
-app.all('*', (req, res) => {
-  res.status(404).json([{ status: 404, message: 'resource not found' }])
+app.get('/about', logger, (req, res) => {
+  res.send('About page')
 })
 
 app.listen(5000, () => {
