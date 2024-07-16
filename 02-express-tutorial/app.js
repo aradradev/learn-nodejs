@@ -1,15 +1,16 @@
 const express = require('express')
+const path = require('path')
 
 const app = express()
 
-app.get('/', (req, res) => {
-  res.status(200).send('<h1>Home Page</h1>')
+app.use(express.static('./public'))
+
+app.get('/', (_req, res) => {
+  res.sendFile(path.resolve(__dirname, './navbar-app/index.html'))
 })
-app.get('/about', (req, res) => {
-  res.status(200).send('<h1>About Page</h1>')
-})
-app.get('*', (req, res) => {
-  res.status(404).send('<h1>resource not found</h1>')
+
+app.all('*', (_req, res) => {
+  res.status(404).send('<h3>resource not found</h3>')
 })
 
 app.listen(5000, () => {
