@@ -18,7 +18,7 @@ app.get('/api/v1/products/query', (req, res) => {
     sortedProducts = sortedProducts.slice(0, Number(limit))
   }
   if (sortedProducts.length < 1)
-    res.status(200).json([{ status: 200, data: [], message: 'This product does not exit' }])
+    return res.status(200).json([{ status: true, data: [], message: 'This product does not exit' }])
 
   res.status(200).json(sortedProducts)
 })
