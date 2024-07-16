@@ -1,26 +1,30 @@
 const express = require('express')
 const { products } = require('./data')
+
 const app = express()
 
 app.get('/', (req, res) => {
-  res.send('<h1>Home Page</h1> <a href="/api/products">products</a>')
+  res.send('<h1>Home Page</h1> <a href="/api/v1/products/query">products queries</a>')
 })
-app.get('/api/products', (req, res) => {
-  const newProducts = products.map((product) => {
-    const { id, name, image } = product
-    return { id, name, image }
-  })
-  res.json(newProducts)
-})
-app.get('/api/products/:productID', (req, res) => {
-  const { productID } = req.params
-  const singleProduct = products.find((product) => product.id === Number(productID))
-  if (!singleProduct) res.status(404).send('resource not found')
-  return res.send(singleProduct)
+app.get('/api/v1/products/query', (req, res) => {
+  const { search, limit } = req.query
+  let sortedProducts = [...products]
+  if (search) {
+    sortedProducts = sortedProducts.filter((product) => {
+      return product.name.startsWith(search.toLowerCase())
+    })
+  }
+  if (limit) {
+    sortedProducts = sortedProducts.slice(0, Number(limit))
+  }
+  if (sortedProducts.length < 1)
+    res.status(200).json([{ status: 200, data: [], message: 'This product does not exit' }])
+
+  res.status(200).json(sortedProducts)
 })
 
 app.all('*', (req, res) => {
-  res.send('<h3>resource not found</h3>')
+  res.status(404).json([{ status: 404, message: 'resource not found' }])
 })
 
 app.listen(5000, () => {
