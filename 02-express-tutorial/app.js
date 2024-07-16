@@ -12,6 +12,12 @@ app.get('/api/products', (req, res) => {
   })
   res.json(newProducts)
 })
+app.get('/api/products/:productID', (req, res) => {
+  const { productID } = req.params
+  const singleProduct = products.find((product) => product.id === Number(productID))
+  if (!singleProduct) res.status(404).send('resource not found')
+  return res.send(singleProduct)
+})
 
 app.all('*', (req, res) => {
   res.send('<h3>resource not found</h3>')
