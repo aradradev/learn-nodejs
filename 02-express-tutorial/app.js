@@ -2,11 +2,22 @@ const express = require('express')
 const { people } = require('./data')
 const app = express()
 app.use(express.urlencoded({ extended: false }))
-
+app.use(express.json())
 app.use(express.static('./methods-public'))
+app.get('/api/people', (req, res) => {
+  res.status(200).json({ success: true, data: people })
+})
+
 app.post('/login', (req, res) => {
   const { name } = req.body
   name ? res.status(200).send(`Welcome ${name}`) : res.status(401).send('Please provide a credential name')
+})
+app.post('/api/people', (req, res) => {
+  const { name } = req.body
+  console.log(name)
+  name
+    ? res.status(201).json({ success: true, person: name })
+    : res.status(404).json({ success: false, msg: 'something went wrong' })
 })
 
 app.get('/api/people', (req, res) => res.status(200).json({ status: true, data: people }))
