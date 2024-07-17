@@ -1,17 +1,13 @@
 const express = require('express')
-
+const people = require('./routes/people')
+const auth = require('./routes/auths')
 const app = express()
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+app.use(express.static('./methods-public'))
+app.use('/api/people', people)
 
-app.get('/', (req, res) => {
-  res.status(200).send('<h1>Home Page</h1>')
-})
-app.get('/about', (req, res) => {
-  res.status(200).send('<h1>About Page</h1>')
-})
-app.get('*', (req, res) => {
-  res.status(404).send('<h1>resource not found</h1>')
-})
+app.use('/login', auth)
 
-app.listen(5000, () => {
-  console.log('Server is running on port 5000...')
-})
+app.all('*', (req, res) => res.status(404).json({ status: false, message: 'resource not found' }))
+app.listen(5000, () => console.log('Server is listening on port 5000...'))
