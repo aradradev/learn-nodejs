@@ -8,11 +8,11 @@ const app = express()
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 app.use('/api/v1/tasks', tasks)
-
+app.use(express.static('./public'))
 //port
 const PORT = 3000
 
-app.all('*', (req, res) => {
+app.all('*', (_req, res) => {
   res.status(404).send('resource not found')
 })
 

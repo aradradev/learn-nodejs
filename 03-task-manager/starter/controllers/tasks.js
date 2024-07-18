@@ -1,6 +1,6 @@
 const Task = require('../models/Task')
 
-const getAllTasks = async (req, res) => {
+const getAllTasks = async (_req, res) => {
   try {
     const tasks = await Task.find({})
     res.status(200).json({ tasks })
@@ -25,8 +25,17 @@ const getTask = async (req, res) => {
     res.status(500).json({ msg: error })
   }
 }
-const updateTask = (req, res) => {
-  res.send('Update task')
+const updateTask = async (req, res) => {
+  try {
+    const { id: taskID } = req.params
+    const task = await Task.findOneAndUpdate({ _id: taskID }, req.body, {
+      new: true,
+      runValidators: true,
+    })
+    task ? res.status(200).json({ task }) : res.status(404).json({ msg: `No task match with id: ${taskID}` })
+  } catch (error) {
+    res.status(500).json({ msg: error })
+  }
 }
 const deleteTask = async (req, res) => {
   try {
