@@ -15,24 +15,24 @@ const createTask = asyncWrapper(async (req, res) => {
 const getTask = asyncWrapper(async (req, res, next) => {
   const { id: taskID } = req.params
   const task = await Task.findOne({ _id: taskID })
-  task ? res.status(200).json({ task }) : next(createCustomError(`No task match with id: ${taskID}`), 404)
+  task ? res.status(200).json({ task }) : next(createCustomError(`No task match with id ${taskID}`, 404))
 })
 
-const updateTask = asyncWrapper(async (req, res) => {
+const updateTask = asyncWrapper(async (req, res, next) => {
   const { id: taskID } = req.params
   const task = await Task.findOneAndUpdate({ _id: taskID }, req.body, {
     new: true,
     runValidators: true,
   })
-  task ? res.status(200).json({ task }) : next(error)
+  task ? res.status(200).json({ task }) : next(createCustomError(`No task match with id ${taskID}`, 404))
 })
 
-const deleteTask = asyncWrapper(async (req, res) => {
+const deleteTask = asyncWrapper(async (req, res, next) => {
   const { id: taskID } = req.params
   const task = await Task.findOneAndDelete({ _id: taskID })
   task
     ? res.status(200).json({ task: null, status: 'success' })
-    : res.status(404).json(`No task match with id: ${taskID}`)
+    : next(createCustomError(`No task match with id ${taskID}`, 404))
 })
 
 module.exports = {
