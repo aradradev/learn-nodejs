@@ -1,5 +1,6 @@
 const Task = require('../models/Task')
 const asyncWrapper = require('../middleware/async-wrapper')
+const { createCustomError } = require('../errors/custom-error')
 
 const getAllTasks = asyncWrapper(async (_req, res) => {
   const tasks = await Task.find({})
@@ -11,10 +12,10 @@ const createTask = asyncWrapper(async (req, res) => {
   res.status(201).json({ task })
 })
 
-const getTask = asyncWrapper(async (req, res) => {
+const getTask = asyncWrapper(async (req, res, next) => {
   const { id: taskID } = req.params
   const task = await Task.findOne({ _id: taskID })
-  task ? res.status(200).json({ task }) : res.status(404).json({ msg: `No task match with id: ${taskID}` })
+  task ? res.status(200).json({ task }) : next(createCustomError(`No task match with id: ${taskID}`), 404)
 })
 
 const updateTask = asyncWrapper(async (req, res) => {
@@ -23,7 +24,7 @@ const updateTask = asyncWrapper(async (req, res) => {
     new: true,
     runValidators: true,
   })
-  task ? res.status(200).json({ task }) : res.status(404).json({ msg: `No task match with id: ${taskID}` })
+  task ? res.status(200).json({ task }) : next(error)
 })
 
 const deleteTask = asyncWrapper(async (req, res) => {
