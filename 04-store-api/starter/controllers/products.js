@@ -9,7 +9,7 @@ const getAllProducts = async (req, res) => {
   const { featured } = req.query
   const queryObject = {}
   if (featured) {
-    return (queryObject.featured = featured === 'true' ? true : false)
+    queryObject.featured = featured === 'true' ? true : false
   }
   console.log(queryObject)
   const products = await Product.find(queryObject)
