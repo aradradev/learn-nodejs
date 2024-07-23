@@ -1,5 +1,7 @@
 const login = async (req, res) => {
-  res.send('login/register/signup')
+  const { username } = req.body
+  console.log(username)
+  res.send(`Hello, ${username}`)
 }
 
 const dashboard = async (req, res) => {
