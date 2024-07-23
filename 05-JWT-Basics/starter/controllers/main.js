@@ -1,7 +1,7 @@
 const login = async (req, res) => {
-  const { username } = req.body
+  const { username, password } = req.body
   console.log(username)
-  res.send(`Hello, ${username}`)
+  res.send(`Hello, ${username}. Your password is: ${password}`)
 }
 
 const dashboard = async (req, res) => {
