@@ -4,6 +4,8 @@ const errorHandlerMiddleware = require('./middleware/error-handler')
 require('dotenv').config()
 const connectDB = require('./db/connect')
 const productsRouter = require('./routes/products')
+require('express-async-errors')
+
 const app = express()
 
 const port = process.env.PORT || 3000
