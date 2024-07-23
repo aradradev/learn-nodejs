@@ -4,7 +4,7 @@ const errorHandlerMiddleware = require('./middleware/error-handler')
 require('dotenv').config()
 const app = express()
 
-const port = 3000
+const port = process.env.PORT || 3000
 // middleware
 app.use(express.json())
 app.use(notFoundMiddleware)
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 const start = async () => {
   try {
     // connect to DB
-    app.listen((port) => console.log(`Server is listening on port ${port}...`))
+    app.listen(port, console.log(`Server is listening on port ${port}...`))
   } catch (error) {
     console.log(error)
   }
