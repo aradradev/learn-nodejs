@@ -1,16 +1,17 @@
-const CustomAPIError = require('../errors/custom-error')
+const { StatusCodes } = require('http-status-codes')
+const { BadRequestError } = require('../errors')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
 const login = async (req, res) => {
   const { username, password } = req.body
   if (!username || !password) {
-    throw new CustomAPIError('Something went wrong. Please provide a username or password', 400)
+    throw new BadRequestError('Something went wrong. Please provide a username or password')
   }
   const id = new Date().getTime()
   // console.log(id)
   const token = jwt.sign({ id, username }, process.env.JWT_SECRET, { expiresIn: '30d' })
-  res.status(201).json({ msg: 'User signed in', token })
+  res.status(StatusCodes.CREATED).json({ msg: 'User signed in', token })
 }
 
 const dashboard = async (req, res) => {
@@ -19,7 +20,7 @@ const dashboard = async (req, res) => {
   const luckyNumber = Math.floor(Math.random() * 100)
 
   res
-    .status(200)
+    .status(StatusCodes.OK)
     .json({ msg: `Hello ${username}`, secret: `Here is your authorized data. Your luck number is ${luckyNumber}` })
 }
 
