@@ -12,7 +12,7 @@ const errorHandlerMiddleware = require('./middleware/error-handler')
 app.use(express.json())
 
 // extra packages
-app.use('/api/v1', authRouter)
+app.use('/api/v1/auth', authRouter)
 app.use('/api/v1', jobsRouter)
 
 // routes
