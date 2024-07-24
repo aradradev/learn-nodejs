@@ -25,16 +25,12 @@ const dashboard = async (req, res) => {
     const { username } = decoded
     // console.log(username)
     const luckyNumber = Math.floor(Math.random() * 100)
-    console.log(luckyNumber)
     res
       .status(200)
       .json({ msg: `Hello ${username}`, secret: `Here is your authorized data, Your lucky number is ${luckyNumber}` })
   } catch (error) {
     throw new CustomAPIError('Not authorized to access this route', 401)
   }
-
-  // const luckyNumber = Math.floor(Math.random() * 100)
-  // res.json({ msg: `Hello, John Doe`, secret: `Here is your authorized data, your lucky number is ${luckyNumber}` })
 }
 
 module.exports = { login, dashboard }
