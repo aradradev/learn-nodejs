@@ -1,8 +1,12 @@
+const Job = require('../models/Job')
+
 const getAllJobs = async (req, res) => {
   res.send('Get All Jobs')
 }
 const createJob = async (req, res) => {
-  res.json(req.user)
+  const createdBy = req.user.userId
+  const job = await Job.create(req.body)
+  res.json({job})
 }
 const getJob = async (req, res) => {
   res.send('Get A Job')
