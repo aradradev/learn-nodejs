@@ -3,6 +3,6 @@ const { getAllJobs, createJob, getJob, updateJob, deleteJob } = require('../cont
 const router = express.Router()
 
 router.route('/jobs').get(getAllJobs).post(createJob)
-router.route('/jobs/:id').get(getJob).patch(updateJob).delete(deleteJob)
+router.route('/jobs/:id').get(getJob).put(updateJob).delete(deleteJob)
 
 module.exports = router
