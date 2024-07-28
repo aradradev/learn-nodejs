@@ -12,6 +12,10 @@ const errorHandlerMiddleware = (err, req, res, next) => {
     customError.statusCode = 400
     customError.msg = `Duplicate value entered for ${Object.keys(err.keyValue)} field, please choose another value`
   }
+  if (err.name === 'ValidationError') {
+    customError.msg = Object.values(err.errors).map((item) => item.message)
+    customError.statusCode = 400
+  }
   // return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err })
   return res.status(customError.statusCode).json({ msg: customError.msg })
 }
