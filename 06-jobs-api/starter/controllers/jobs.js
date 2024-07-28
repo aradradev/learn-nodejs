@@ -32,7 +32,10 @@ const updateJob = async (req, res) => {
   if (company === '' || position === '') {
     throw new BadRequestError('Company or Position fields cannot be empty')
   }
-  const job = await Job.findOneAndUpdate({ _id: jobId, createdBy: userId }, req.body)
+  const job = await Job.findOneAndUpdate({ _id: jobId, createdBy: userId }, req.body, {
+    new: true,
+    runValidators: true,
+  })
   if (!job) {
     throw new NotFoundError(`Job does not exist with id ${jobId}`)
   }
