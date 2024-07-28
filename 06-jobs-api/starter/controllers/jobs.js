@@ -24,7 +24,15 @@ const getJob = async (req, res) => {
   res.status(StatusCodes.BAD_REQUEST).send({ job })
 }
 const updateJob = async (req, res) => {
-  res.send('Update Job')
+  const {
+    user: { userId },
+    params: { id: jobId },
+  } = req
+  const job = await Job.findOneAndUpdate({ _id: jobId, createdBy: userId }, req.body)
+  if (!job) {
+    throw new NotFoundError(`Job does not exist with id ${jobId}`)
+  }
+  res.status(StatusCodes.BAD_REQUEST).send({ job })
 }
 const deleteJob = async (req, res) => {
   res.send('Delete Job')
