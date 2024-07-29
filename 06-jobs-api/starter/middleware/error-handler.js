@@ -9,18 +9,18 @@ const errorHandlerMiddleware = (err, req, res, next) => {
   //   return res.status(err.statusCode).json({ msg: err.message })
   // }
   if (err.code && err.code === 11000) {
-    customError.statusCode = 400
+    customError.statusCode = StatusCodes.BAD_REQUEST
     customError.msg = `Duplicate value entered for ${Object.keys(err.keyValue)} field, please choose another value`
   }
   if (err.name === 'ValidationError') {
     customError.msg = Object.values(err.errors)
       .map((item) => item.message)
       .join(' | ')
-    customError.statusCode = 400
+    customError.statusCode = StatusCodes.BAD_REQUEST
   }
   if (err.name === 'CastError') {
-    customError.statusCode = 404
-    customError.msg = `Job not found with id ${Object.values(err.value).join('')}. Please try again later`
+    customError.statusCode = StatusCodes.NOT_FOUND
+    customError.msg = `Item not found with id ${err.value}. Please try again later`
   }
   // return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err })
   return res.status(customError.statusCode).json({ msg: customError.msg })
