@@ -18,6 +18,10 @@ const errorHandlerMiddleware = (err, req, res, next) => {
       .join(' | ')
     customError.statusCode = 400
   }
+  if (err.name === 'CastError') {
+    customError.statusCode = 404
+    customError.msg = `Job not found with id ${Object.values(err.value).join('')}. Please try again later`
+  }
   // return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ err })
   return res.status(customError.statusCode).json({ msg: customError.msg })
 }
