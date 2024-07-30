@@ -17,13 +17,14 @@ const jobsRouter = require('./routes/jobs')
 const notFoundMiddleware = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
 
-app.use(express.json())
-app.use(helmet())
-app.use(xss())
-
 // static frontend
 const path = require('path')
 app.use(express.static(path.resolve(__dirname, './client/build')))
+
+// place a first middleware
+app.use(express.json())
+app.use(helmet())
+app.use(xss())
 
 // routes
 app.use('/api/v1/auth', authRouter)
