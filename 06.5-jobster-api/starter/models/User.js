@@ -23,18 +23,18 @@ const UserSchema = new mongoose.Schema({
     required: [true, 'Please provide password'],
     minlength: 6,
   },
-  lastName:{
+  lastName: {
     type: String,
     trim: true,
     maxlength: 20,
-    default: 'lastName'
+    default: 'lastName',
   },
-  location:{
-    trype: String,
+  location: {
+    type: String,
     trim: true,
     maxlength: 20,
-    default: 'my city'
-  }
+    default: 'my city',
+  },
 })
 
 UserSchema.pre('save', async function () {
@@ -43,13 +43,9 @@ UserSchema.pre('save', async function () {
 })
 
 UserSchema.methods.createJWT = function () {
-  return jwt.sign(
-    { userId: this._id, name: this.name },
-    process.env.JWT_SECRET,
-    {
-      expiresIn: process.env.JWT_LIFETIME,
-    }
-  )
+  return jwt.sign({ userId: this._id, name: this.name }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_LIFETIME,
+  })
 }
 
 UserSchema.methods.comparePassword = async function (canditatePassword) {
