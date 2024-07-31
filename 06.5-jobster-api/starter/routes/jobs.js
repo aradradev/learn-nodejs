@@ -6,6 +6,6 @@ const testUser = require('../middleware/test-user')
 
 router.route('/').post(testUser, createJob).get(getAllJobs)
 
-router.route('/:id').get(getJob).delete(deleteJob).patch(testUser, updateJob)
+router.route('/:id').get(getJob).delete(testUser, deleteJob).patch(testUser, updateJob)
 
 module.exports = router
