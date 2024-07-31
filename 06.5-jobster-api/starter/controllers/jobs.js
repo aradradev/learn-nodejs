@@ -14,7 +14,7 @@ const getAllJobs = async (req, res) => {
   let result = Job.find(queryObject)
 
   const jobs = await result
-  res.status(StatusCodes.OK).json({ jobs, count: jobs.length })
+  res.status(StatusCodes.OK).json({ jobs })
 }
 const getJob = async (req, res) => {
   const {
