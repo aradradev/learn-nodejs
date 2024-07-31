@@ -17,6 +17,9 @@ const jobsRouter = require('./routes/jobs')
 const notFoundMiddleware = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
 
+// set trust api for app production
+app.set('trust proxy', 1)
+
 // static frontend
 const path = require('path')
 app.use(express.static(path.resolve(__dirname, './client/build')))
