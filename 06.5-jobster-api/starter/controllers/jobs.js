@@ -3,12 +3,15 @@ const { StatusCodes } = require('http-status-codes')
 const { BadRequestError, NotFoundError } = require('../errors')
 
 const getAllJobs = async (req, res) => {
-  const { search } = req.query
+  const { search, status } = req.query
   const queryObject = {
     createdBy: req.user.userId,
   }
   if (search) {
     queryObject.position = { $regex: search, $options: 'i' }
+  }
+  if (status && status !== 'all') {
+    queryObject.status = status
   }
 
   let result = Job.find(queryObject)
