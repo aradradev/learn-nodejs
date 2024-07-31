@@ -3,7 +3,7 @@ const { StatusCodes } = require('http-status-codes')
 const { BadRequestError, NotFoundError } = require('../errors')
 
 const getAllJobs = async (req, res) => {
-  const { search, status } = req.query
+  const { search, status, jobType } = req.query
   const queryObject = {
     createdBy: req.user.userId,
   }
@@ -12,6 +12,9 @@ const getAllJobs = async (req, res) => {
   }
   if (status && status !== 'all') {
     queryObject.status = status
+  }
+  if (jobType && jobType !== 'all') {
+    queryObject.jobType = jobType
   }
 
   let result = Job.find(queryObject)
