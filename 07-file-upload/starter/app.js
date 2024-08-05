@@ -10,6 +10,11 @@ app.use(express.json())
 // database
 const connectDB = require('./db/connect')
 
+// Products Routes
+const productRouter = require('./routes/productRoutes')
+
+app.use('/api/v1/products', productRouter)
+
 // error handler
 const notFoundMiddleware = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
