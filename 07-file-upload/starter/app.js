@@ -4,20 +4,20 @@ require('express-async-errors')
 const express = require('express')
 const app = express()
 
+// File Upload
+const fileUpload = require('express-fileupload')
+
 // First middleware
 app.use(express.json())
+app.use(fileUpload())
 
 // database
 const connectDB = require('./db/connect')
-
-// File Upload
-const fileUpload = require('express-fileupload')
 
 // Products Routes
 const productRouter = require('./routes/productRoutes')
 
 app.use('/api/v1/products', productRouter)
-app.use(fileUpload())
 
 // error handler
 const notFoundMiddleware = require('./middleware/not-found')
