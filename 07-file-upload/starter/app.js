@@ -10,10 +10,14 @@ app.use(express.json())
 // database
 const connectDB = require('./db/connect')
 
+// File Upload
+const fileUpload = require('express-fileupload')
+
 // Products Routes
 const productRouter = require('./routes/productRoutes')
 
 app.use('/api/v1/products', productRouter)
+app.use(fileUpload())
 
 // error handler
 const notFoundMiddleware = require('./middleware/not-found')
