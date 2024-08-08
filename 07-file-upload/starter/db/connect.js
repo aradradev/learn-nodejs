@@ -5,7 +5,7 @@ const connectDB = (url) => {
     mongoose.connect(url)
     console.log('MongoDB Connected...')
   } catch (error) {
-    console.log(`Something went wrong with the server`)
+    console.log('Something went wrong with the server...')
     throw error
   }
 }
