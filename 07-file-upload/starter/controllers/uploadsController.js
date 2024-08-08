@@ -4,7 +4,6 @@ const CustomError = require('../errors')
 require('dotenv').config()
 
 const uploadProductImage = async (req, res) => {
-  console.log(req.files)
   if (!req.files) {
     throw new CustomError.BadRequestError('No File Uploaded')
   }
