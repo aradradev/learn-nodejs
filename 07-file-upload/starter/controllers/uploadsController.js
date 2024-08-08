@@ -1,6 +1,7 @@
 const path = require('path')
 const StatusCodes = require('http-status-codes')
 const CustomError = require('../errors')
+require('dotenv').config()
 
 const uploadProductImage = async (req, res) => {
   console.log(req.files)
@@ -12,7 +13,7 @@ const uploadProductImage = async (req, res) => {
   if (!productImage.mimetype.startsWith('image')) {
     throw new CustomError.BadRequestError('Please Upload Image')
   }
-  if (!productImage.size > process.env.MAX_SIZE) {
+  if (productImage.size > process.env.MAX_SIZE) {
     throw new CustomError.BadRequestError('Please Upload Image Smaller 1KB')
   }
   const imagePath = path.join(__dirname, `../public/uploads/${productImage.name}`)
