@@ -8,6 +8,7 @@ const app = express()
 const fileUpload = require('express-fileupload')
 
 // First middleware
+app.use(express.static('./public'))
 app.use(express.json())
 app.use(fileUpload())
 
