@@ -2,7 +2,7 @@ const path = require('path')
 const StatusCodes = require('http-status-codes')
 const CustomError = require('../errors')
 require('dotenv').config()
-const cloudinary = require('cloudinary')
+const cloudinary = require('cloudinary').v2
 
 const uploadProductImageLocal = async (req, res) => {
   if (!req.files) {
@@ -24,7 +24,7 @@ const uploadProductImageLocal = async (req, res) => {
 const uploadProductImage = async (req, res) => {
   const result = await cloudinary.uploader.upload(req.files.image.tempFilePath, {
     use_filename: true,
-    folder: 'file_upload',
+    folder: 'file-upload',
   })
   console.log(result)
 }
