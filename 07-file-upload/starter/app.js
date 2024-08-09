@@ -7,6 +7,14 @@ const app = express()
 // File Upload
 const fileUpload = require('express-fileupload')
 
+// Import cloudinary always user v2
+const cloudinary = require('cloudinary').v2
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET,
+})
+
 // First middleware
 app.use(express.static('./public'))
 app.use(express.json())
