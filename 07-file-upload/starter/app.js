@@ -7,7 +7,7 @@ const app = express()
 // File Upload
 const fileUpload = require('express-fileupload')
 
-// Import cloudinary always user v2
+// Import cloudinary always use v2
 const cloudinary = require('cloudinary').v2
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
