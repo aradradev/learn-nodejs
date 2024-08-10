@@ -1,12 +1,13 @@
 const mongoose = require('mongoose')
 
 const connectDB = (url) => {
-  return mongoose.connect(url, {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true,
-  })
+  try {
+    mongoose.connect(url)
+    console.log('MongoDB Connected...')
+  } catch (error) {
+    console.log('Something went wrong with the server...')
+    throw error
+  }
 }
 
 module.exports = connectDB
