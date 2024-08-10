@@ -22,10 +22,11 @@ const uploadProductImageLocal = async (req, res) => {
 }
 
 const uploadProductImage = async (req, res) => {
-  const result = await cloudinary.uploader.upload(req.files.image.tempFilePath, {
+  const imagePath = req.files.image.tempFilePath
+  const result = await cloudinary.uploader.upload(imagePath, {
     use_filename: true,
     folder: 'file-upload',
   })
-  console.log(result)
+  return res.status(StatusCodes.OK).json({ image: { src: result.secure_url } })
 }
 module.exports = uploadProductImage
