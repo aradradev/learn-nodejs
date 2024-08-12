@@ -4,6 +4,8 @@ require('express-async-errors')
 const express = require('express')
 const app = express()
 
+const sendEmail = require('./controllers/sendEmail')
+
 // error handler
 const notFoundMiddleware = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
