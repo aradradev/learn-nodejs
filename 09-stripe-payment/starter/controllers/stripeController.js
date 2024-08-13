@@ -3,12 +3,12 @@ const stripeController = async (req, res) => {
   const calculateOrderAmount = () => {
     return total_amount + shipping_fee
   }
-  const paymentIntent = await stripe.paymentIntents.create({
+  const paymentIntent = await stripe.checkout.sessions.create({
     amount: calculateOrderAmount(),
     currency: 'usd',
   })
   console.log(paymentIntent)
-  res.send('stripe')
+  res.json({ clientSecret: paymentIntent.client_secret })
 }
 
 module.exports = stripeController
