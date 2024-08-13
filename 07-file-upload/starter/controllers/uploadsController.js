@@ -3,6 +3,7 @@ const StatusCodes = require('http-status-codes')
 const CustomError = require('../errors')
 require('dotenv').config()
 const cloudinary = require('cloudinary').v2
+const fs = require('fs')
 
 const uploadProductImageLocal = async (req, res) => {
   if (!req.files) {
@@ -27,6 +28,7 @@ const uploadProductImage = async (req, res) => {
     use_filename: true,
     folder: 'file-upload',
   })
+  fs.unlinkSync(imagePath)
   return res.status(StatusCodes.OK).json({ image: { src: result.secure_url } })
 }
 module.exports = uploadProductImage
