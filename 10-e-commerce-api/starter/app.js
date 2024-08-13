@@ -6,6 +6,9 @@ require('express-async-errors')
 const express = require('express')
 const app = express()
 
+// Middleware for more packages morgan
+const morgan = require('morgan')
+
 // Connect to MongoDB
 const connectDB = require('./db/connect')
 
@@ -14,6 +17,7 @@ const notFoundMiddleware = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
 
 // Other built in middleware
+app.use(morgan('tiny'))
 app.use(express.json())
 
 app.get('/', (req, res) => {
