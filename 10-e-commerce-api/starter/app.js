@@ -13,6 +13,9 @@ const connectDB = require('./db/connect')
 const notFoundMiddleware = require('./middleware/not-found')
 const errorHandlerMiddleware = require('./middleware/error-handler')
 
+// Other built in middleware
+app.use(express.json())
+
 app.get('/', (req, res) => {
   res.send('<h1>E-Commerce Website</h1>')
 })
