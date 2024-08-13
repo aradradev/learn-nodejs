@@ -21,7 +21,7 @@ app.use(morgan('tiny'))
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send('<h1>E-Commerce Website</h1>')
+  res.send('<h1>E-Commerce API</h1>')
 })
 
 // Middleware
