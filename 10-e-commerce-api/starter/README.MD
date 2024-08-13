@@ -43,7 +43,7 @@
 
 - [x] create controllers folder
 - [x] add authController file
-- [] export (register,login,logout) functions
+- [x] export (register,login,logout) functions
 - [] res.send('some string value')
 - [] create routes folder
 - [] setup authRoutes file
