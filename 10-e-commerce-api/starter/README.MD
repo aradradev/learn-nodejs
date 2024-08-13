@@ -41,7 +41,7 @@
 
 #### Auth Routes Structure
 
-- [] create controllers folder
+- [x] create controllers folder
 - [] add authController file
 - [] export (register,login,logout) functions
 - [] res.send('some string value')
