@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer')
 
-const sendEmail = async (req, res) => {
+const sendEmailEth = async (req, res) => {
   let testAccount = await nodemailer.createTestAccount()
   const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
@@ -18,4 +18,5 @@ const sendEmail = async (req, res) => {
   })
   res.json(info)
 }
+
 module.exports = sendEmail
