@@ -46,12 +46,12 @@
 - [x] export (register,login,logout) functions
 - [x] res.send('some string value')
 - [x] create routes folder
-- [] setup authRoutes file
-- [] import all controllers
-- [] setup three routes
-- [] post('/register') post('/login') get('/logout')
-- [] import authRoutes as authRouter in the app.js
-- [] setup app.use('/api/v1/auth', authRouter)
+- [x] setup authRoutes file
+- [x] import all controllers
+- [x] setup three routes
+- [x] post('/register') post('/login') get('/logout')
+- [x] import authRoutes as authRouter in the app.js
+- [x] setup app.use('/api/v1/auth', authRouter)
 
 #### Test Routes in Postman
 
