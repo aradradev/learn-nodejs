@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer')
+const sgMail = require('@sendgrid/mail')
 
 const sendEmailEth = async (req, res) => {
   let testAccount = await nodemailer.createTestAccount()
@@ -18,5 +19,7 @@ const sendEmailEth = async (req, res) => {
   })
   res.json(info)
 }
+
+const sendEmail = async (req, res) => {}
 
 module.exports = sendEmail
