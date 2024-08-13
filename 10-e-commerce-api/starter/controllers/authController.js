@@ -2,8 +2,8 @@
 const User = require('../models/User')
 
 // Import dependencies
-const StatusCodes = require('http-status-codes')
-const customError = require('../errors')
+const { StatusCodes } = require('http-status-codes')
+const CustomError = require('../errors')
 
 const register = async (req, res) => {
   const user = await User.create(req.body)
