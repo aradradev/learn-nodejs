@@ -9,6 +9,8 @@ const app = express()
 // Middleware for more packages morgan
 const morgan = require('morgan')
 
+// authRouter
+const authRouter = require('./routes/authRoutes')
 // Connect to MongoDB
 const connectDB = require('./db/connect')
 
@@ -23,6 +25,9 @@ app.use(express.json())
 app.get('/', (req, res) => {
   res.send('<h1>E-Commerce API</h1>')
 })
+
+// Routes
+app.use('/api/v1/auth', authRouter)
 
 // Middleware
 app.use(notFoundMiddleware)
