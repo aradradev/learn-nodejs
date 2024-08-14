@@ -1,5 +1,6 @@
 // Import user model
 const User = require('../models/User')
+const jwt = require('jsonwebtoken')
 
 // Import dependencies
 const { StatusCodes } = require('http-status-codes')
@@ -15,7 +16,9 @@ const register = async (req, res) => {
   const isFirstAccount = (await User.countDocuments({})) === 0
   const role = isFirstAccount ? 'admin' : 'user'
   const user = await User.create({ email, name, password, role })
-  res.status(StatusCodes.CREATED).json({ user })
+  const tokenUser = { name: user.name, userId: user._id, role: user.role }
+  const token = jwt.sign({ tokenUser }, 'jwtSecret', { expiresIn: '1d' })
+  res.status(StatusCodes.CREATED).json({ user: tokenUser, token })
 }
 
 const login = async (req, res) => {
