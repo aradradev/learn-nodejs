@@ -1,10 +1,10 @@
 // Import user model
 const User = require('../models/User')
-const jwt = require('jsonwebtoken')
 
 // Import dependencies
 const { StatusCodes } = require('http-status-codes')
 const CustomError = require('../errors')
+const { createJWT } = require('../utils')
 
 const register = async (req, res) => {
   // Check if email exists
@@ -17,7 +17,7 @@ const register = async (req, res) => {
   const role = isFirstAccount ? 'admin' : 'user'
   const user = await User.create({ email, name, password, role })
   const tokenUser = { name: user.name, userId: user._id, role: user.role }
-  const token = jwt.sign({ tokenUser }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_LIFETIME })
+  const token = createJWT({ payload: tokenUser })
   res.status(StatusCodes.CREATED).json({ user: tokenUser, token })
 }
 
