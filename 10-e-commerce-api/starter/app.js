@@ -8,6 +8,7 @@ const app = express()
 
 // Middleware for more packages morgan
 const morgan = require('morgan')
+const cookieParser = require('cookie-parser')
 
 // authRouter
 const authRouter = require('./routes/authRoutes')
@@ -21,8 +22,10 @@ const errorHandlerMiddleware = require('./middleware/error-handler')
 // Other built in middleware
 app.use(morgan('tiny'))
 app.use(express.json())
+app.use(cookieParser())
 
 app.get('/', (req, res) => {
+  console.log(req.cookies)
   res.send('<h1>E-Commerce API</h1>')
 })
 
