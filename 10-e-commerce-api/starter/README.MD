@@ -86,7 +86,7 @@
 
 #### Login Route
 
-- [] check if email and password exist, if one missing return 400
+- [x] check if email and password exist, if one missing return 400
 - [] find user, if no user return 401
 - [] check password, if does not match return 401
 - [] if everything is correct, attach cookie
