@@ -22,10 +22,11 @@ const errorHandlerMiddleware = require('./middleware/error-handler')
 // Other built in middleware
 app.use(morgan('tiny'))
 app.use(express.json())
-app.use(cookieParser())
+app.use(cookieParser(process.env.JWT_SECRET))
 
 app.get('/', (req, res) => {
-  console.log(req.cookies)
+  // console.log(req.cookies)
+  console.log(req.signedCookies)
   res.send('<h1>E-Commerce API</h1>')
 })
 

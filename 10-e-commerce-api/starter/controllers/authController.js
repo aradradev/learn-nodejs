@@ -5,6 +5,9 @@ const User = require('../models/User')
 const CustomError = require('../errors')
 const { attachCookiesToResponse } = require('../utils')
 
+// StatusCodes import
+const { StatusCodes } = require('http-status-codes')
+
 const register = async (req, res) => {
   // Check if email exists
   const { email, name, password } = req.body
