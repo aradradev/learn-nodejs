@@ -94,7 +94,7 @@
 
 #### Logout Route
 
-- [] set token cookie equal to some string value
+- [x] set token cookie equal to some string value
 - [] set expires:new Date(Date.now())
 
 #### User Routes Structure
