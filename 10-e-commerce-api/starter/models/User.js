@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
-const bcrypt = require('bcryptjs')
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -24,11 +23,6 @@ const UserSchema = new mongoose.Schema({
     minlength: 6,
   },
   role: { type: String, enum: ['admin', 'user'], default: 'user' },
-})
-
-UserSchema.pre('save', function next() {
-  if (!this.isModified('password')) return
-  const salt = bcrypt.genSalt()
 })
 
 module.exports = mongoose.model('User', UserSchema)
