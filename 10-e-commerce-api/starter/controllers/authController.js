@@ -4,7 +4,7 @@ const User = require('../models/User')
 // Import dependencies
 const { StatusCodes } = require('http-status-codes')
 const CustomError = require('../errors')
-const { createJWT } = require('../utils')
+const { attachCookiesToResponse } = require('../utils')
 
 const register = async (req, res) => {
   // Check if email exists
@@ -17,13 +17,7 @@ const register = async (req, res) => {
   const role = isFirstAccount ? 'admin' : 'user'
   const user = await User.create({ email, name, password, role })
   const tokenUser = { name: user.name, userId: user._id, role: user.role }
-  const token = createJWT({ payload: tokenUser })
-  const oneDay = 1000 * 60 * 60 * 24
-  res.cookie('token', token, {
-    httpOnly: true,
-    expires: new Date(Date.now() + oneDay)
-  })
-  res.status(StatusCodes.CREATED).json({ user: tokenUser })
+  attachCookiesToResponse({ res, user: tokenUser })
 }
 
 const login = async (req, res) => {
