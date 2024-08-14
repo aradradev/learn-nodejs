@@ -28,6 +28,10 @@ const login = async (req, res) => {
   if (!email || !password) {
     throw new CustomError.BadRequestError('Please provide email or password')
   }
+  const user = await User.findOne({})
+  if (!user) {
+    throw new CustomError.UnauthenticatedError('Invalid Credentials')
+  }
   res.send('login page')
 }
 
