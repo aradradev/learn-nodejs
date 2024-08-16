@@ -14,9 +14,14 @@ const updateUser = async (req, res) => {
   res.send('update user')
 }
 
+const updateUserPassword = async (req, res) => {
+  res.send('update user password')
+}
+
 module.export = {
   getAllUsers,
   getSingleUser,
   showCurrentUser,
   updateUser,
+  updateUserPassword,
 }
