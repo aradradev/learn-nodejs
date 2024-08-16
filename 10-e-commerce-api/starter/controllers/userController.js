@@ -2,7 +2,7 @@ const getAllUsers = async (req, res) => {
   res.send('get all users')
 }
 
-const getSingleUser = async (res, res) => {
+const getSingleUser = async (req, res) => {
   res.send('get a single user')
 }
 
