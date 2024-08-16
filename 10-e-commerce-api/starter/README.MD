@@ -103,7 +103,7 @@
 - [x] export (getAllUsers,getSingleUser,showCurrentUser,updateUser,updateUserPassword) functions
 - [x] res.send('some string value')
 - [x] setup userRoutes file
-- [] import all controllers
+- [x] import all controllers
 - [] setup just one route - router.route('/').get(getAllUsers);
 - [] import userRoutes as userRouter in the app.js
 - [] setup app.use('/api/v1/users', userRouter)
