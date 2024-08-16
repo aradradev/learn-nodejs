@@ -12,6 +12,7 @@ const cookieParser = require('cookie-parser')
 
 // authRouter
 const authRouter = require('./routes/authRoutes')
+const userRouter = require('./routes/userRoutes')
 // Connect to MongoDB
 const connectDB = require('./db/connect')
 
@@ -32,6 +33,7 @@ app.get('/', (req, res) => {
 
 // Routes
 app.use('/api/v1/auth', authRouter)
+app.use('/api/v1/users', userRouter)
 
 // Middleware
 app.use(notFoundMiddleware)
