@@ -104,7 +104,7 @@
 - [x] res.send('some string value')
 - [x] setup userRoutes file
 - [x] import all controllers
-- [] setup just one route - router.route('/').get(getAllUsers);
+- [x] setup just one route - router.route('/').get(getAllUsers);
 - [] import userRoutes as userRouter in the app.js
 - [] setup app.use('/api/v1/users', userRouter)
 
