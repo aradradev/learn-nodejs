@@ -18,7 +18,7 @@ const updateUserPassword = async (req, res) => {
   res.send('update user password')
 }
 
-module.export = {
+module.exports = {
   getAllUsers,
   getSingleUser,
   showCurrentUser,
