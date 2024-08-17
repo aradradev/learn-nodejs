@@ -1,8 +1,14 @@
 // Import User model
 const User = require('../models/User')
 
+// Status
+const { StatusCodes } = require('http-status-codes')
+
 const getAllUsers = async (req, res) => {
-  res.send('get all users')
+  const { email, name, role } = req.body
+  role ? role === 'user' : ''
+  const user = await User.find(name, email, role)
+  res.status(StatusCodes.OK).json({ user })
 }
 
 const getSingleUser = async (req, res) => {
