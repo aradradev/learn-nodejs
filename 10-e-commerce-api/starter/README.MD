@@ -140,7 +140,7 @@
 - [x] look for user with req.user.userId
 - [x] check if oldPassword matches with user.comparePassword
 - [x] if no match 401
-- [] if everything good set user.password equal to newPassword
+- [x] if everything good set user.password equal to newPassword
 - [] await user.save()
 
 #### createTokenUser in Utils
