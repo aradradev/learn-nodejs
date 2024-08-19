@@ -11,6 +11,9 @@ const {
   updateUserPassword,
 } = require('../controllers/userController')
 
+// Authenticate user
+const authenticateUser = require('../middleware/authentication')
+
 router.route('/').get(getAllUsers)
 
 router.route('/showMe').get(showCurrentUser)
