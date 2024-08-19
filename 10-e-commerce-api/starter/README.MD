@@ -141,7 +141,7 @@
 - [x] check if oldPassword matches with user.comparePassword
 - [x] if no match 401
 - [x] if everything good set user.password equal to newPassword
-- [] await user.save()
+- [x] await user.save()
 
 #### createTokenUser in Utils
 
