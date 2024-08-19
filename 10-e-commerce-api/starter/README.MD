@@ -155,7 +155,7 @@
 - [x] add authenticateUser middleware in the route
 - [x] check for name and email in the body
 - [x] if one is missing, send 400 (optional)
-- [] use findOneAndUpdate()
+- [x] use findOneAndUpdate()
 - [] create token user, attachCookiesToResponse and send back the tokenUser
 
 #### updateUser with user.save()
