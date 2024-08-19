@@ -14,5 +14,12 @@ const authenticateUser = async (req, res, next) => {
     throw new CustomError.UnauthenticatedError('Authentication Invalid')
   }
 }
+const authorizePermissions = async (req, res, next) => {
+  console.log('admin route')
+  next()
+}
 
-module.exports = authenticateUser
+module.exports = {
+  authenticateUser,
+  authorizePermissions,
+}
