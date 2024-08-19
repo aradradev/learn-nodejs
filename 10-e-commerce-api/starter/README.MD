@@ -134,7 +134,7 @@
 #### UpdateUserPassword
 
 - [x] almost identical to login user
-- [] add authenticateUser middleware in the route
+- [x] add authenticateUser middleware in the route
 - [] check for oldPassword and newPassword in the body
 - [] if one missing 400
 - [] look for user with req.user.userId
