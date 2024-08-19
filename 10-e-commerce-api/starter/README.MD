@@ -373,4 +373,4 @@
 - [] heroku create "App Name"
 - [] git remote -v
 - [] setup env vars in GUI
-- [] git push heroku master/main
+- [] git push heroku master/main
