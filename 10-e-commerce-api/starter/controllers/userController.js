@@ -30,6 +30,8 @@ const updateUser = async (req, res) => {
 }
 
 const updateUserPassword = async (req, res) => {
+  const { oldPassword, newPassword } = req.body
+  console.log(oldPassword, newPassword)
   res.send('update user password')
 }
 
