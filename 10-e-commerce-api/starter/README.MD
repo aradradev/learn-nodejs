@@ -137,7 +137,7 @@
 - [x] add authenticateUser middleware in the route
 - [x] check for oldPassword and newPassword in the body
 - [x] if one missing 400
-- [] look for user with req.user.userId
+- [x] look for user with req.user.userId
 - [] check if oldPassword matches with user.comparePassword
 - [] if no match 401
 - [] if everything good set user.password equal to newPassword
