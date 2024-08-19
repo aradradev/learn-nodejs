@@ -15,7 +15,9 @@ const authenticateUser = async (req, res, next) => {
   }
 }
 const authorizePermissions = async (req, res, next) => {
-  console.log('admin route')
+  if (req.user.role !== 'admin') {
+    throw new CustomError.UnauthorizedError('You are not authorized to access this route')
+  }
   next()
 }
 
