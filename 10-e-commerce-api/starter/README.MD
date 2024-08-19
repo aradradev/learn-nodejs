@@ -139,7 +139,7 @@
 - [x] if one missing 400
 - [x] look for user with req.user.userId
 - [x] check if oldPassword matches with user.comparePassword
-- [] if no match 401
+- [x] if no match 401
 - [] if everything good set user.password equal to newPassword
 - [] await user.save()
 
