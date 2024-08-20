@@ -9,6 +9,7 @@ const app = express()
 // Middleware for more packages morgan
 const morgan = require('morgan')
 const cookieParser = require('cookie-parser')
+const fileUpload = require('express-fileupload')
 
 // authRouter
 const authRouter = require('./routes/authRoutes')
@@ -25,6 +26,7 @@ const errorHandlerMiddleware = require('./middleware/error-handler')
 app.use(morgan('tiny'))
 app.use(express.json())
 app.use(cookieParser(process.env.JWT_SECRET))
+app.use(express.static('./public'))
 
 app.get('/', (req, res) => {
   // console.log(req.cookies)
