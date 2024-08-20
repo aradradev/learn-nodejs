@@ -19,10 +19,9 @@ const getAllProducts = async (req, res) => {
 }
 
 const getSingleProduct = async (req, res) => {
-  const { id: productId } = req.params
-  const product = await Product.findOne({ productId })
+  const product = await Product.findOne({ _id: req.params.id })
   if (!product) {
-    throw new CustomError.NotFoundError(`Product not found with id: ${productId}`)
+    throw new CustomError.NotFoundError(`Product not found with id: ${req.params.id}`)
   }
   res.status(StatusCodes.OK).json({ product })
 }
