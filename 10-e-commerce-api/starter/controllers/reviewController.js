@@ -1,5 +1,15 @@
+// import model
+const Review = require('../models/Review')
+
+// import custom error
+const CustomError = require('../errors')
+const { StatusCodes } = require('http-status-codes')
+
 const createReview = async (req, res) => {
-  res.send('create review')
+  req.body.user = req.user.userId
+  req.body.product = req.user.productId
+  const review = await Review.create(req.body)
+  res.status(StatusCodes.CREATED).json({ review })
 }
 
 const getAllReviews = async (req, res) => {
