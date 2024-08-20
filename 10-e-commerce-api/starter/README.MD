@@ -194,7 +194,7 @@
 - [x] typical setup
 - [x] router.route('/uploadImage').post(uploadImage)
 - [x] import productRoutes as productRouter in the app.js
-- [] setup app.use('/api/v1/products', productRouter)
+- [x] setup app.use('/api/v1/products', productRouter)
 
 #### Product Routes in Postman
 
