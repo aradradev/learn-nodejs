@@ -239,7 +239,7 @@
 - [x] import all controllers
 - [x] only getAllReviews and getSingleReview accessible to public
 - [x] rest only to users (setup middleware)
-- [] typical REST setup
+- [x] typical REST setup
 - [] import reviewRoutes as reviewRouter in the app.js
 - [] setup app.use('/api/v1/reviews', reviewRouter)
 
