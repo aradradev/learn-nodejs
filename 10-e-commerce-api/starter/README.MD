@@ -179,7 +179,7 @@
 - [x] averageRating:{type:Number}
 - [x] user
 - [x] set timestamps
-- [] export Product model
+- [x] export Product model
 
 #### Product Structure
 
