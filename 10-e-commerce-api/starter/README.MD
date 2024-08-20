@@ -241,7 +241,7 @@
 - [x] rest only to users (setup middleware)
 - [x] typical REST setup
 - [x] import reviewRoutes as reviewRouter in the app.js
-- [] setup app.use('/api/v1/reviews', reviewRouter)
+- [x] setup app.use('/api/v1/reviews', reviewRouter)
 
 #### Create Review
 
