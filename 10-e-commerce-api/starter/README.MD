@@ -166,8 +166,8 @@
 
 - [x] create Product.js in models folder
 - [x] create Schema
-- [] name : {type:String}
-- [] price: {type:Number}
+- [x] name : {type:String}
+- [x] price: {type:Number}
 - [] description: {type:String}
 - [] image: {type:String}
 - [] category: {type:String}
@@ -373,4 +373,4 @@
 - [] heroku create "App Name"
 - [] git remote -v
 - [] setup env vars in GUI
-- [] git push heroku master/main
+- [] git push heroku master/main
