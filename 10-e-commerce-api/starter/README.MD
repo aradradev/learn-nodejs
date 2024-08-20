@@ -178,7 +178,7 @@
 - [x] inventory:{type:Number}
 - [x] averageRating:{type:Number}
 - [x] user
-- [] set timestamps
+- [x] set timestamps
 - [] export Product model
 
 #### Product Structure
