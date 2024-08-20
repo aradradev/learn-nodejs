@@ -174,7 +174,7 @@
 - [x] company: {type:String}
 - [x] colors: {type:[]}
 - [x] featured: {type:Boolean}
-- [] freeShipping: {type:Boolean}
+- [x] freeShipping: {type:Boolean}
 - [] inventory:{type:Number}
 - [] averageRating:{type:Number}
 - [] user
