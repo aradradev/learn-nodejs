@@ -184,8 +184,8 @@
 #### Product Structure
 
 - [x] add productController file in controllers
-- [] export (createProduct, getAllProducts,
-  getSingleProduct, updateProduct, deleteProduct, uploadImage) functions
+- [x] export (createProduct, getAllProducts,
+      getSingleProduct, updateProduct, deleteProduct, uploadImage) functions
 - [] res.send('function name')
 - [] setup productRoutes file in routes
 - [] import all controllers
