@@ -173,7 +173,7 @@
 - [x] category: {type:String}
 - [x] company: {type:String}
 - [x] colors: {type:[]}
-- [] featured: {type:Boolean}
+- [x] featured: {type:Boolean}
 - [] freeShipping: {type:Boolean}
 - [] inventory:{type:Number}
 - [] averageRating:{type:Number}
