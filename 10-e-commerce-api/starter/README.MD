@@ -224,7 +224,7 @@
 - [x] create Schema
 - [x] rating : {type:Number}
 - [x] title: {type:String}
-- [] comment: {type:String}
+- [x] comment: {type:String}
 - [] user
 - [] product
 - [] set timestamps
