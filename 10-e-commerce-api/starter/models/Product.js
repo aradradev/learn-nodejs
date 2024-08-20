@@ -19,10 +19,20 @@ const ProductSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    required: [true, 'Please provide image'],
+    default: '/uploads/example.jpeg',
   },
-  category: { type: String },
-  company: { type: String },
+  category: {
+    type: String,
+    required: [true, 'Please provide product category'],
+    enum: ['office', 'kitchen', 'bedroom'],
+  },
+  company: {
+    type: String,
+    required: [true, 'Please provide company name'],
+    enum: {
+      values: ['ikea', 'liddy', 'marcos'],
+    },
+  },
   colors: { type: [] },
   featured: { type: Boolean },
   freeShipping: { type: Boolean },
