@@ -31,11 +31,10 @@ const updateUser = async (req, res) => {
   if (!name || !email) {
     throw new CustomError.BadRequestError('Invalid Credentials')
   }
-  const user = await User.findOneAndUpdate(
-    { _id: req.user.userId },
-    { email, name },
-    { new: true, runValidators: true },
-  )
+  const user = await User.findOne({ _id: req.user.userId })
+  user.name = name
+  user.email = email
+  await user.save()
   const tokenUser = createTokenUser(user)
   attachCookiesToResponse({ res, user: tokenUser })
   res.status(StatusCodes.OK).json({ user: tokenUser })
