@@ -232,8 +232,8 @@
 
 #### Review Structure
 
-- [] add reviewController file in controllers
-- [] export (createReview, getAllReviews, getSingleReview, updateReview, deleteReview) functions
+- [x] add reviewController file in controllers
+- [x] export (createReview, getAllReviews, getSingleReview, updateReview, deleteReview) functions
 - [] res.send('function name')
 - [] setup reviewRoutes file in routes
 - [] import all controllers
