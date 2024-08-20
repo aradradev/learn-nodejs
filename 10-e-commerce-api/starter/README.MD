@@ -169,7 +169,7 @@
 - [x] name : {type:String}
 - [x] price: {type:Number}
 - [x] description: {type:String}
-- [] image: {type:String}
+- [x] image: {type:String}
 - [] category: {type:String}
 - [] company: {type:String}
 - [] colors: {type:[]}
