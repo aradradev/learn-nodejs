@@ -164,7 +164,7 @@
 
 #### Product Model
 
-- [] create Product.js in models folder
+- [x] create Product.js in models folder
 - [] create Schema
 - [] name : {type:String}
 - [] price: {type:Number}
