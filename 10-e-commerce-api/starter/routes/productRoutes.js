@@ -10,8 +10,11 @@ const {
   uploadImage,
 } = require('../controllers/productController')
 
+// authenticated middleware
+const authenticateUser = require('../middleware/authentication')
+
 // get all product
-router.route('/').get(getAllProducts).post(createProduct)
+router.route('/').get(authenticateUser, getAllProducts).post(authenticateUser, createProduct)
 
 // upload image
 router.route('/uploadImage').post(uploadImage)
