@@ -221,7 +221,7 @@
 #### Review Model
 
 - [x] create Review.js in models folder
-- [] create Schema
+- [x] create Schema
 - [] rating : {type:Number}
 - [] title: {type:String}
 - [] comment: {type:String}
