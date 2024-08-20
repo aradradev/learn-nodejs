@@ -176,7 +176,7 @@
 - [x] featured: {type:Boolean}
 - [x] freeShipping: {type:Boolean}
 - [x] inventory:{type:Number}
-- [] averageRating:{type:Number}
+- [x] averageRating:{type:Number}
 - [] user
 - [] set timestamps
 - [] export Product model
