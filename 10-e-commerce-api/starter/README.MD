@@ -248,7 +248,7 @@
 - [x] check for product in the req.body
 - [x] attach user property (set it equal to req.user.userId) on to req.body
 - [x] create review
-- [] don't test yet
+- [x] don't test yet
 
 #### Get All Reviews and Get Single Review
 
