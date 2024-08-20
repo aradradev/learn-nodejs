@@ -7,6 +7,9 @@ const { StatusCodes } = require('http-status-codes')
 // import custom error
 const CustomError = require('../errors')
 
+// import path
+const path = require('path')
+
 const createProduct = async (req, res) => {
   req.body.user = req.user.userId
   const product = await Product.create(req.body)
@@ -48,6 +51,18 @@ const deleteProduct = async (req, res) => {
 
 const uploadImage = async (req, res) => {
   console.log(req.files)
+  if (!req.file) {
+    throw new CustomError.BadRequestError('No file upload')
+  }
+  const productImage = req.files.image
+  if (!productImage.mimetype.startsWith('image')) {
+    throw new CustomError.BadRequestError('Please upload image')
+  }
+  const maxSize = 1024 * 1024
+  if (productImage.size > maxSize) {
+    throw new CustomError.BadRequestError('Image cannot be more than 1MB')
+  }
+  const imagePath = path.join(__dirname, `../public/uploads/${productImage.name}`)
   res.send('upload image')
 }
 
