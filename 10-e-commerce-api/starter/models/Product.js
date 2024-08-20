@@ -51,7 +51,10 @@ const ProductSchema = new mongoose.Schema({
     required: true,
     default: 15,
   },
-  averageRating: { type: Number },
+  averageRating: {
+    type: Number,
+    default: 0,
+  },
   user: mongoose.Types.ObjectId('User'),
   timestamps: true,
 })
