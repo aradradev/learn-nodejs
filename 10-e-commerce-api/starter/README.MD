@@ -222,7 +222,7 @@
 
 - [x] create Review.js in models folder
 - [x] create Schema
-- [] rating : {type:Number}
+- [x] rating : {type:Number}
 - [] title: {type:String}
 - [] comment: {type:String}
 - [] user
