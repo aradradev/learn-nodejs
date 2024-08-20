@@ -177,7 +177,7 @@
 - [x] freeShipping: {type:Boolean}
 - [x] inventory:{type:Number}
 - [x] averageRating:{type:Number}
-- [] user
+- [x] user
 - [] set timestamps
 - [] export Product model
 
