@@ -27,7 +27,11 @@ const getSingleProduct = async (req, res) => {
 }
 
 const updateProduct = async (req, res) => {
-  res.send('update product')
+  const product = await Product.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true, runValidators: true })
+  if (!product) {
+    throw new CustomError.NotFoundError(`Product not found with id: ${req.params.id}`)
+  }
+  res.status(StatusCodes.OK).json({ product })
 }
 
 const deleteProduct = async (req, res) => {
