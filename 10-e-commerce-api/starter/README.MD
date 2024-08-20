@@ -189,7 +189,7 @@
 - [x] res.send('function name')
 - [x] setup productRoutes file in routes
 - [x] import all controllers
-- [] only getAllProducts and getSingleProduct accessible to public
+- [x] only getAllProducts and getSingleProduct accessible to public
 - [] rest only by admin (setup middlewares)
 - [] typical setup
 - [] router.route('/uploadImage').post(uploadImage)
