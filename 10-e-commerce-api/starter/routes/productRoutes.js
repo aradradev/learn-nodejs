@@ -11,19 +11,22 @@ const {
 } = require('../controllers/productController')
 
 // authorizedPermission middleware
-const { authorizePermissions } = require('../middleware/authentication')
+const { authorizePermissions, authenticateUser } = require('../middleware/authentication')
 
 // get all product
-router.route('/').get(getAllProducts).post(authorizePermissions('admin'), createProduct)
+router
+  .route('/')
+  .get(getAllProducts)
+  .post([authenticateUser, authorizePermissions('admin')], createProduct)
 
 // upload image
-router.route('/uploadImage').post(authorizePermissions('admin'), uploadImage)
+router.route('/uploadImage').post([authenticateUser, authorizePermissions('admin')], uploadImage)
 
 // get single route with id params
 router
   .route('/:id')
   .get(getSingleProduct)
-  .patch(authorizePermissions('admin'), updateProduct)
-  .delete(authorizePermissions('admin'), deleteProduct)
+  .patch([authenticateUser, authorizePermissions('admin')], updateProduct)
+  .delete([authenticateUser, authorizePermissions('admin')], deleteProduct)
 
 module.exports = router
