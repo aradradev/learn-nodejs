@@ -50,8 +50,7 @@ const deleteProduct = async (req, res) => {
 }
 
 const uploadImage = async (req, res) => {
-  console.log(req.files)
-  if (!req.file) {
+  if (!req.files) {
     throw new CustomError.BadRequestError('No file upload')
   }
   const productImage = req.files.image
@@ -60,11 +59,11 @@ const uploadImage = async (req, res) => {
   }
   const maxSize = 1024 * 1024
   if (productImage.size > maxSize) {
-    throw new CustomError.BadRequestError('Image cannot be more than 1MB')
+    throw new CustomError.BadRequestError('Upload image smaller than 1MB')
   }
-  const imagePath = path.join(__dirname, `../public/uploads/${productImage.name}`)
+  const imagePath = path.join(__dirname, '../public/uploads/' + `${productImage.name}`)
   await productImage.mv(imagePath)
-  res.status(StatusCodes.CREATED).json({ image: `/uploads/${productImage.name}` })
+  res.status(StatusCodes.OK).json({ image: `/uploads/${productImage.name}` })
 }
 
 module.exports = {
