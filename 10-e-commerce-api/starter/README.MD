@@ -193,7 +193,7 @@
 - [x] rest only by admin (setup middlewares)
 - [x] typical setup
 - [x] router.route('/uploadImage').post(uploadImage)
-- [] import productRoutes as productRouter in the app.js
+- [x] import productRoutes as productRouter in the app.js
 - [] setup app.use('/api/v1/products', productRouter)
 
 #### Product Routes in Postman
