@@ -226,7 +226,7 @@
 - [x] title: {type:String}
 - [x] comment: {type:String}
 - [x] user
-- [] product
+- [x] product
 - [] set timestamps
 - [] export Review model
 
