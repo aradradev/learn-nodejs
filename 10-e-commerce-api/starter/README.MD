@@ -245,7 +245,7 @@
 
 #### Create Review
 
-- [] check for product in the req.body
+- [x] check for product in the req.body
 - [] attach user property (set it equal to req.user.userId) on to req.body
 - [] create review
 - [] don't test yet
