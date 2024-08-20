@@ -168,7 +168,7 @@
 - [x] create Schema
 - [x] name : {type:String}
 - [x] price: {type:Number}
-- [] description: {type:String}
+- [x] description: {type:String}
 - [] image: {type:String}
 - [] category: {type:String}
 - [] company: {type:String}
