@@ -11,17 +11,10 @@ const {
 } = require('../controllers/reviewController')
 
 // import authenticate middleware
-const { authenticateUser, authorizePermissions } = require('../middleware/authentication')
+const { authenticateUser } = require('../middleware/authentication')
 
-router
-  .route('/')
-  .post([authenticateUser, authorizePermissions('admin', 'user')], createReview)
-  .get(getAllReviews)
+router.route('/').post(authenticateUser, createReview).get(getAllReviews)
 
-router
-  .route('/:id')
-  .get(getSingleReview)
-  .patch([authenticateUser, authorizePermissions('admin')], updateReview)
-  .delete([authenticateUser, authorizePermissions('admin')], deleteReview)
+router.route('/:id').get(getSingleReview).patch(authenticateUser, updateReview).delete(authenticateUser, deleteReview)
 
 module.exports = router
