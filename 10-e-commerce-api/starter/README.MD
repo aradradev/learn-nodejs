@@ -183,7 +183,7 @@
 
 #### Product Structure
 
-- [] add productController file in controllers
+- [x] add productController file in controllers
 - [] export (createProduct, getAllProducts,
   getSingleProduct, updateProduct, deleteProduct, uploadImage) functions
 - [] res.send('function name')
