@@ -225,7 +225,7 @@
 - [x] rating : {type:Number}
 - [x] title: {type:String}
 - [x] comment: {type:String}
-- [] user
+- [x] user
 - [] product
 - [] set timestamps
 - [] export Review model
