@@ -234,8 +234,8 @@
 
 - [x] add reviewController file in controllers
 - [x] export (createReview, getAllReviews, getSingleReview, updateReview, deleteReview) functions
-- [] res.send('function name')
-- [] setup reviewRoutes file in routes
+- [x] res.send('function name')
+- [x] setup reviewRoutes file in routes
 - [] import all controllers
 - [] only getAllReviews and getSingleReview accessible to public
 - [] rest only to users (setup middleware)
