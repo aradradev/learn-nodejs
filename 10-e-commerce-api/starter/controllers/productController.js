@@ -35,7 +35,11 @@ const updateProduct = async (req, res) => {
 }
 
 const deleteProduct = async (req, res) => {
-  res.send('delete product')
+  const product = await Product.findOneAndDelete({ _id: req.params.id })
+  if (!product) {
+    throw new CustomError.NotFoundError(`Product not found with id: ${req.params.id}`)
+  }
+  res.status(StatusCodes.OK).json({ msg: `Product with id:"${req.params.id}" deleted successfully` })
 }
 
 const uploadImage = async (req, res) => {
