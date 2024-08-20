@@ -228,7 +228,7 @@
 - [x] user
 - [x] product
 - [x] set timestamps
-- [] export Review model
+- [x] export Review model
 
 #### Review Structure
 
