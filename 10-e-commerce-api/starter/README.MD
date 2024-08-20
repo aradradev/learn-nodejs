@@ -220,7 +220,7 @@
 
 #### Review Model
 
-- [] create Review.js in models folder
+- [x] create Review.js in models folder
 - [] create Schema
 - [] rating : {type:Number}
 - [] title: {type:String}
