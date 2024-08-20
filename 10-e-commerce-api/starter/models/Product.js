@@ -40,9 +40,15 @@ const ProductSchema = new mongoose.Schema({
   },
   featured: {
     type: Boolean,
+    default: false,
   },
-  freeShipping: { type: Boolean },
-  inventory: { type: Number },
+  freeShipping: {
+    type: Boolean,
+    default: false,
+  },
+  inventory: {
+    type: Number,
+  },
   averageRating: { type: Number },
   user: mongoose.Types.ObjectId('User'),
   timestamps: true,
