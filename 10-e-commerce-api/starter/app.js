@@ -15,6 +15,8 @@ const fileUpload = require('express-fileupload')
 const authRouter = require('./routes/authRoutes')
 const userRouter = require('./routes/userRoutes')
 const productRouter = require('./routes/productRoutes')
+const reviewRouter = require('./routes/reviewRoutes')
+
 // Connect to MongoDB
 const connectDB = require('./db/connect')
 
