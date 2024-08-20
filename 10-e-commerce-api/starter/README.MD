@@ -175,7 +175,7 @@
 - [x] colors: {type:[]}
 - [x] featured: {type:Boolean}
 - [x] freeShipping: {type:Boolean}
-- [] inventory:{type:Number}
+- [x] inventory:{type:Number}
 - [] averageRating:{type:Number}
 - [] user
 - [] set timestamps
