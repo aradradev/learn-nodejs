@@ -206,7 +206,7 @@
 
 #### Remaining Controllers (apart from uploadImage)
 
-- [] getAllProducts
+- [x] getAllProducts
 - [] getSingleProduct
 - [] updateProduct
 - [] deleteProduct
