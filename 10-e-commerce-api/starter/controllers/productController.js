@@ -1,6 +1,5 @@
 // import models
 const Product = require('../models/Product')
-const User = require('../models/User')
 
 // http status codes
 const { StatusCodes } = require('http-status-codes')
