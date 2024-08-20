@@ -63,7 +63,8 @@ const uploadImage = async (req, res) => {
     throw new CustomError.BadRequestError('Image cannot be more than 1MB')
   }
   const imagePath = path.join(__dirname, `../public/uploads/${productImage.name}`)
-  res.send('upload image')
+  await productImage.mv(imagePath)
+  res.status(StatusCodes.CREATED).json({ image: `/uploads/${productImage.name}` })
 }
 
 module.exports = {
