@@ -3,7 +3,9 @@ const ReviewSchema = new mongoose.Schema(
   {
     rating: {
       type: Number,
-      default: 4.5,
+      min: 1,
+      max: 1,
+      required: [true, 'Please provide rating'],
     },
     title: {
       type: String,
@@ -15,7 +17,6 @@ const ReviewSchema = new mongoose.Schema(
       type: String,
       required: [true, 'comment must be provided'],
       trim: true,
-      maxlength: [1000, 'comment cannot be more than 1000 characters'],
     },
     user: {
       type: mongoose.Types.ObjectId,

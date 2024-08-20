@@ -15,7 +15,7 @@ const { authenticateUser, authorizePermissions } = require('../middleware/authen
 
 router
   .route('/')
-  .post([authenticateUser, authorizePermissions('admin')], createReview)
+  .post([authenticateUser, authorizePermissions('admin', 'user')], createReview)
   .get(getAllReviews)
 
 router
