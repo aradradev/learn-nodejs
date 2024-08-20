@@ -19,27 +19,31 @@ const getAllProducts = async (req, res) => {
 }
 
 const getSingleProduct = async (req, res) => {
-  const product = await Product.findOne({ _id: req.params.id })
+  const { id: productId } = req.params
+  const product = await Product.findOne({ _id: productId })
   if (!product) {
-    throw new CustomError.NotFoundError(`Product not found with id: ${req.params.id}`)
+    throw new CustomError.NotFoundError(`Product not found with id: ${productId}`)
   }
   res.status(StatusCodes.OK).json({ product })
 }
 
 const updateProduct = async (req, res) => {
-  const product = await Product.findOneAndUpdate({ _id: req.params.id }, req.body, { new: true, runValidators: true })
+  const { id: productId } = req.params
+  const product = await Product.findOneAndUpdate({ _id: productId }, req.body, { new: true, runValidators: true })
   if (!product) {
-    throw new CustomError.NotFoundError(`Product not found with id: ${req.params.id}`)
+    throw new CustomError.NotFoundError(`Product not found with id: ${productId}`)
   }
   res.status(StatusCodes.OK).json({ product })
 }
 
 const deleteProduct = async (req, res) => {
-  const product = await Product.findOneAndDelete({ _id: req.params.id })
+  const { id: productId } = req.params
+  const product = await Product.findOne({ _id: productId })
   if (!product) {
-    throw new CustomError.NotFoundError(`Product not found with id: ${req.params.id}`)
+    throw new CustomError.NotFoundError(`Product not found with id: ${productId}`)
   }
-  res.status(StatusCodes.OK).json({ msg: `Product with id:"${req.params.id}" deleted successfully` })
+  await product.remove()
+  res.status(StatusCodes.OK).json({ msg: `Product with id:"${productId}" deleted successfully` })
 }
 
 const uploadImage = async (req, res) => {
