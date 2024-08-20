@@ -32,4 +32,7 @@ const ReviewSchema = new mongoose.Schema(
   { timestamps: true },
 )
 
+// User can only leave one review per product
+ReviewSchema.index({ product: 1, user: 1 }, { unique: true })
+
 module.exports = mongoose.model('Review', ReviewSchema)
