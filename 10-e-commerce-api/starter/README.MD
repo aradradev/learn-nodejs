@@ -237,7 +237,7 @@
 - [x] res.send('function name')
 - [x] setup reviewRoutes file in routes
 - [x] import all controllers
-- [] only getAllReviews and getSingleReview accessible to public
+- [x] only getAllReviews and getSingleReview accessible to public
 - [] rest only to users (setup middleware)
 - [] typical REST setup
 - [] import reviewRoutes as reviewRouter in the app.js
