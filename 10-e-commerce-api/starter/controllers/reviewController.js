@@ -27,7 +27,7 @@ const createReview = async (req, res) => {
 }
 
 const getAllReviews = async (req, res) => {
-  const reviews = await Review.find({})
+  const reviews = await Review.find({}).populate({ path: 'product', select: 'name company price' })
   if (!reviews) {
     throw new CustomError.NotFoundError('No reviews added yet.')
   }
