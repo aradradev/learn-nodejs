@@ -269,7 +269,7 @@
 - [x] get {rating, title comment} from req.body
 - [x] check if review exists
 - [x] if no review, 404
-- [] check permissions
+- [x] check permissions
 - [] set review properties equal to rating, title, comment
 - [] use await review.save()
 - [] send back 200
