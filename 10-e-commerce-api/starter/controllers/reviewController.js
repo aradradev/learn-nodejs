@@ -5,6 +5,7 @@ const Product = require('../models/Product')
 // import custom error
 const CustomError = require('../errors')
 const { StatusCodes } = require('http-status-codes')
+const { checkPermissions } = require('../utils')
 
 const createReview = async (req, res) => {
   const { product: productId } = req.body
@@ -53,6 +54,7 @@ const deleteReview = async (req, res) => {
   if (!reviewId) {
     throw new CustomError.NotFoundError(`No review with id: ${reviewId}`)
   }
+  checkPermissions(req.user, review.user)
   await review.remove()
   res.status(StatusCodes.OK).json({ msg: `Review with id:${reviewId} deleted successfully` })
 }
