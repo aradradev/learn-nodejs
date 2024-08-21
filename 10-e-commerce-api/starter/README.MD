@@ -257,7 +257,7 @@
 #### Delete Review
 
 - [x] get id from req.params
-- [] check if review exists
+- [x] check if review exists
 - [] if no review, 404
 - [] check permissions (req.user, review.user)
 - [] use await review.remove()
