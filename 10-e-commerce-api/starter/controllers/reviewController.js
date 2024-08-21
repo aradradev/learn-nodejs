@@ -8,7 +8,7 @@ const { StatusCodes } = require('http-status-codes')
 
 const createReview = async (req, res) => {
   const { product: productId } = req.body
-  const isValidProduct = await Product.findOne({ productId })
+  const isValidProduct = await Product.findOne({ _id: productId })
 
   if (!isValidProduct) {
     throw new CustomError.NotFoundError(`No product with id: ${productId}`)
