@@ -258,7 +258,7 @@
 
 - [x] get id from req.params
 - [x] check if review exists
-- [] if no review, 404
+- [x] if no review, 404
 - [] check permissions (req.user, review.user)
 - [] use await review.remove()
 - [] send back 200
