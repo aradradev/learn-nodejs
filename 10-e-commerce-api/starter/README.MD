@@ -268,7 +268,7 @@
 - [x] get id from req.params
 - [x] get {rating, title comment} from req.body
 - [x] check if review exists
-- [] if no review, 404
+- [x] if no review, 404
 - [] check permissions
 - [] set review properties equal to rating, title, comment
 - [] use await review.save()
