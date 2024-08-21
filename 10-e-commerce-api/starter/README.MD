@@ -261,7 +261,7 @@
 - [x] if no review, 404
 - [] check permissions (req.user, review.user)
 - [x] use await review.remove()
-- [] send back 200
+- [x] send back 200
 
 #### Update Review
 
