@@ -26,7 +26,11 @@ const createReview = async (req, res) => {
 }
 
 const getAllReviews = async (req, res) => {
-  res.send('get all reviews')
+  const reviews = await Review.find({})
+  if (!reviews) {
+    throw new CustomError.NotFoundError('No reviews added yet.')
+  }
+  res.status(StatusCodes.OK).json({ reviews })
 }
 
 const getSingleReview = async (req, res) => {
