@@ -45,6 +45,7 @@ const deleteProduct = async (req, res) => {
   if (!product) {
     throw new CustomError.NotFoundError(`Product not found with id: ${productId}`)
   }
+  console.log(review instanceof mongoose.Document)
   await product.remove()
   res.status(StatusCodes.OK).json({ msg: `Product with id:"${productId}" deleted successfully` })
 }
