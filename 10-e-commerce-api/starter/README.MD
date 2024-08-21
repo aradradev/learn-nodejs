@@ -270,7 +270,7 @@
 - [x] check if review exists
 - [x] if no review, 404
 - [x] check permissions
-- [] set review properties equal to rating, title, comment
+- [x] set review properties equal to rating, title, comment
 - [] use await review.save()
 - [] send back 200
 
