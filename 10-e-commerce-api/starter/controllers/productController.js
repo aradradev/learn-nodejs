@@ -62,7 +62,11 @@ const uploadImage = async (req, res) => {
     throw new CustomError.BadRequestError('Upload image smaller than 1MB')
   }
   const imagePath = path.join(__dirname, '../public/uploads/' + `${productImage.name}`)
+
+  // move the productImage to the right path
   await productImage.mv(imagePath)
+
+  // send back the response
   res.status(StatusCodes.OK).json({ image: `/uploads/${productImage.name}` })
 }
 
