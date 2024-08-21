@@ -272,7 +272,7 @@
 - [x] check permissions
 - [x] set review properties equal to rating, title, comment
 - [x] use await review.save()
-- [] send back 200
+- [x] send back 200
 
 #### Populate
 
