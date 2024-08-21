@@ -267,7 +267,7 @@
 
 - [x] get id from req.params
 - [x] get {rating, title comment} from req.body
-- [] check if review exists
+- [x] check if review exists
 - [] if no review, 404
 - [] check permissions
 - [] set review properties equal to rating, title, comment
