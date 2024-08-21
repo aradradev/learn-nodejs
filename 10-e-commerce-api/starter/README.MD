@@ -266,7 +266,7 @@
 #### Update Review
 
 - [x] get id from req.params
-- [] get {rating, title comment} from req.body
+- [x] get {rating, title comment} from req.body
 - [] check if review exists
 - [] if no review, 404
 - [] check permissions
