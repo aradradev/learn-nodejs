@@ -79,7 +79,7 @@ const deleteReview = async (req, res) => {
 
 const getSingleProductReviews = async (req, res) => {
   const { id: productId } = req.params
-  const reviews = Review.findOne({ product: productId })
+  const reviews = await Review.find({ product: productId })
   res.status(StatusCodes.OK).json({ reviews, count: reviews.length })
 }
 
@@ -89,4 +89,5 @@ module.exports = {
   getSingleReview,
   updateReview,
   deleteReview,
+  getSingleProductReviews,
 }
