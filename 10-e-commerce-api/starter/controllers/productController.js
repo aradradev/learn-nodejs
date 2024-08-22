@@ -9,6 +9,7 @@ const CustomError = require('../errors')
 
 // import path
 const path = require('path')
+const Review = require('../models/Review')
 
 const createProduct = async (req, res) => {
   req.body.user = req.user.userId
@@ -45,8 +46,9 @@ const deleteProduct = async (req, res) => {
   if (!product) {
     throw new CustomError.NotFoundError(`Product not found with id: ${productId}`)
   }
-  console.log(review instanceof mongoose.Document)
-  await product.remove()
+  // manually delete all associated reviews
+  await Review.deleteMany({ product: productId })
+  await product.deleteOne()
   res.status(StatusCodes.OK).json({ msg: `Product with id:"${productId}" deleted successfully` })
 }
 

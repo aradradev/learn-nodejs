@@ -1,6 +1,7 @@
 // import model
 const Review = require('../models/Review')
 const Product = require('../models/Product')
+const mongoose = require('mongoose')
 
 // import custom error
 const CustomError = require('../errors')
@@ -72,6 +73,7 @@ const deleteReview = async (req, res) => {
   checkPermissions(req.user, review.user)
 
   // Use deleteOne instead of remove
+  console.log(review instanceof mongoose.Document)
   await review.deleteOne()
 
   res.status(StatusCodes.OK).json({ msg: `Review with id:${reviewId} deleted successfully` })
