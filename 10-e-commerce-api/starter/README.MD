@@ -292,7 +292,7 @@
 - [x] shippingFee: {type:Number}
 - [x] subtotal: {type:Number}
 - [x] total: {type:Number}
-- [] orderItems:[]
+- [x] orderItems:[]
 - [] status:{type:String}
 - [] user
 - [] clientSecret:{type:String}
