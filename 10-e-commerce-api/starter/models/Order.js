@@ -22,6 +22,9 @@ const OrderSchema = new mongoose.Schema(
     orderItems: {
       type: [],
     },
+    status: {
+      type: String,
+    },
     user: {
       type: mongoose.Types.ObjectId,
       ref: 'User',
