@@ -289,7 +289,7 @@
 - [x] create Order.js in models folder
 - [x] create Schema
 - [x] tax : {type:Number}
-- [] shippingFee: {type:Number}
+- [x] shippingFee: {type:Number}
 - [] subtotal: {type:Number}
 - [] total: {type:Number}
 - [] orderItems:[]
