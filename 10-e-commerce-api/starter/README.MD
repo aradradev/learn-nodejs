@@ -290,7 +290,7 @@
 - [x] create Schema
 - [x] tax : {type:Number}
 - [x] shippingFee: {type:Number}
-- [] subtotal: {type:Number}
+- [x] subtotal: {type:Number}
 - [] total: {type:Number}
 - [] orderItems:[]
 - [] status:{type:String}
