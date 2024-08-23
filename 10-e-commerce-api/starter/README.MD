@@ -297,7 +297,7 @@
 - [x] user
 - [x] clientSecret:{type:String}
 - [x] paymentId:{type:String}
-- [] set timestamps
+- [x] set timestamps
 - [] export Order model
 
 #### Order Structure
