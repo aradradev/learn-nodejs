@@ -20,6 +20,6 @@ router
 
 router.route('/showAllMyOrders').get(authenticateUser, getCurrentUserOrders)
 
-router.route('/:id').patch(authenticateUser, updateOrder)
+router.route('/:id').get([authenticateUser, getSingleOrder], getSingleOrder).patch(authenticateUser, updateOrder)
 
 module.exports = router
