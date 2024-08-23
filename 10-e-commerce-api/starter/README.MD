@@ -293,7 +293,7 @@
 - [x] subtotal: {type:Number}
 - [x] total: {type:Number}
 - [x] orderItems:[]
-- [] status:{type:String}
+- [x] status:{type:String}
 - [] user
 - [] clientSecret:{type:String}
 - [] paymentId:{type:String}
