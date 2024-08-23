@@ -294,7 +294,7 @@
 - [x] total: {type:Number}
 - [x] orderItems:[]
 - [x] status:{type:String}
-- [] user
+- [x] user
 - [] clientSecret:{type:String}
 - [] paymentId:{type:String}
 - [] set timestamps
