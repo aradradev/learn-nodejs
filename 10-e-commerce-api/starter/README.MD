@@ -311,7 +311,7 @@
 - [x] authenticate user in all routes
 - [x] getAllOrders admin only
 - [x] typical REST setup
-- [] router.route('/showAllMyOrders').get(getCurrentUserOrders)
+- [x] router.route('/showAllMyOrders').get(getCurrentUserOrders)
 - [] import orderRoutes as orderRouter in the app.js
 - [] setup app.use('/api/v1/orders', orderRouter)
 
