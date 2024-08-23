@@ -302,7 +302,7 @@
 
 #### Order Structure
 
-- [] add orderController file in controllers
+- [x] add orderController file in controllers
 - [] export (getAllOrders, getSingleOrder, getCurrentUserOrders,
   createOrder, updateOrder) functions
 - [] res.send('function name')
