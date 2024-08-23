@@ -19,14 +19,12 @@ const OrderSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    orderItems: {
-      type: [],
-    },
+    orderItems: [],
     status: {
       type: String,
     },
     user: {
-      type: mongoose.Types.ObjectId,
+      type: mongoose.Schema.ObjectId,
       ref: 'User',
     },
     clientSecret: {
