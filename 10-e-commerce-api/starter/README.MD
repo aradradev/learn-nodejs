@@ -312,8 +312,8 @@
 - [x] getAllOrders admin only
 - [x] typical REST setup
 - [x] router.route('/showAllMyOrders').get(getCurrentUserOrders)
-- [] import orderRoutes as orderRouter in the app.js
-- [] setup app.use('/api/v1/orders', orderRouter)
+- [x] import orderRoutes as orderRouter in the app.js
+- [x] setup app.use('/api/v1/orders', orderRouter)
 
 #### Order in Postman
 
