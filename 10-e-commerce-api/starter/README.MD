@@ -298,7 +298,7 @@
 - [x] clientSecret:{type:String}
 - [x] paymentId:{type:String}
 - [x] set timestamps
-- [] export Order model
+- [x] export Order model
 
 #### Order Structure
 
