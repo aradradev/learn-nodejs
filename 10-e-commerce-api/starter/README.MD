@@ -307,7 +307,7 @@
       createOrder, updateOrder) functions
 - [x] res.send('function name')
 - [x] setup orderRoutes file in routes
-- [] import all controllers
+- [x] import all controllers
 - [] authenticate user in all routes
 - [] getAllOrders admin only
 - [] typical REST setup
