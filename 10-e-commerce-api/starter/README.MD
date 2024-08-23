@@ -308,7 +308,7 @@
 - [x] res.send('function name')
 - [x] setup orderRoutes file in routes
 - [x] import all controllers
-- [] authenticate user in all routes
+- [x] authenticate user in all routes
 - [] getAllOrders admin only
 - [] typical REST setup
 - [] router.route('/showAllMyOrders').get(getCurrentUserOrders)
