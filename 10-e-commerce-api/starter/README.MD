@@ -303,8 +303,8 @@
 #### Order Structure
 
 - [x] add orderController file in controllers
-- [] export (getAllOrders, getSingleOrder, getCurrentUserOrders,
-  createOrder, updateOrder) functions
+- [x] export (getAllOrders, getSingleOrder, getCurrentUserOrders,
+      createOrder, updateOrder) functions
 - [] res.send('function name')
 - [] setup orderRoutes file in routes
 - [] import all controllers
