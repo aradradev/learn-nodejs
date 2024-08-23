@@ -291,7 +291,7 @@
 - [x] tax : {type:Number}
 - [x] shippingFee: {type:Number}
 - [x] subtotal: {type:Number}
-- [] total: {type:Number}
+- [x] total: {type:Number}
 - [] orderItems:[]
 - [] status:{type:String}
 - [] user
