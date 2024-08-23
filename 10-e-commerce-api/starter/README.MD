@@ -296,7 +296,7 @@
 - [x] status:{type:String}
 - [x] user
 - [x] clientSecret:{type:String}
-- [] paymentId:{type:String}
+- [x] paymentId:{type:String}
 - [] set timestamps
 - [] export Order model
 
