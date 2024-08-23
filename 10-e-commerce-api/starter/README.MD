@@ -305,8 +305,8 @@
 - [x] add orderController file in controllers
 - [x] export (getAllOrders, getSingleOrder, getCurrentUserOrders,
       createOrder, updateOrder) functions
-- [] res.send('function name')
-- [] setup orderRoutes file in routes
+- [x] res.send('function name')
+- [x] setup orderRoutes file in routes
 - [] import all controllers
 - [] authenticate user in all routes
 - [] getAllOrders admin only
