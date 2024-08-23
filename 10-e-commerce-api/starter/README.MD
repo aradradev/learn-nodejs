@@ -309,7 +309,7 @@
 - [x] setup orderRoutes file in routes
 - [x] import all controllers
 - [x] authenticate user in all routes
-- [] getAllOrders admin only
+- [x] getAllOrders admin only
 - [] typical REST setup
 - [] router.route('/showAllMyOrders').get(getCurrentUserOrders)
 - [] import orderRoutes as orderRouter in the app.js
