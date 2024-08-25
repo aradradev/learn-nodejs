@@ -50,7 +50,7 @@ const createOrder = async (req, res) => {
     user: req.user.userId,
     clientSecret: paymentIntent.client_secret,
   })
-  res.status(StatusCodes.OK).json({ order, clientSecret: order.clientSecret })
+  res.status(StatusCodes.CREATED).json({ order, clientSecret: order.clientSecret })
 }
 
 const getAllOrders = async (req, res) => {
