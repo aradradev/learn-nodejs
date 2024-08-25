@@ -14,6 +14,19 @@ const createOrder = async (req, res) => {
   let subtotal = 0
   for (const item of cartItems) {
     const dbProduct = await Product.findOne({ _id: item.product })
+    if (!dbProduct) {
+      throw new CustomError.NotFoundError(`No product with id: ${item.product}`)
+    }
+    const { name, price, image, _id } = dbProduct
+    const singleCartItem = {
+      amount: item.amount,
+      name,
+      price,
+      image,
+      product: _id,
+    }
+    orderItems = [...orderItems, singleCartItem]
+    subtotal += item.amount * price
   }
   res.send('create order')
 }
