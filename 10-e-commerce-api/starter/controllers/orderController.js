@@ -1,4 +1,5 @@
 const createOrder = async (req, res) => {
+  const { tax, shippingFee, items: cartItems } = req.body
   res.send('create order')
 }
 
