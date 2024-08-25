@@ -1,5 +1,20 @@
+const CustomError = require('../errors')
+const Order = require('../models/Order')
+const Product = require('../models/Product')
+
 const createOrder = async (req, res) => {
   const { tax, shippingFee, items: cartItems } = req.body
+  if (!cartItems || cartItems.length < 1) {
+    throw new CustomError.BadRequestError('No cart items provided')
+  }
+  if (!tax || !shippingFee) {
+    throw new CustomError.BadRequestError('Please provide tax and shippingFee')
+  }
+  let orderItems = []
+  let subtotal = 0
+  for (const item of cartItems) {
+    const dbProduct = await Product.findOne({ _id: item.product })
+  }
   res.send('create order')
 }
 
