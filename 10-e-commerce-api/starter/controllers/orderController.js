@@ -2,6 +2,11 @@ const CustomError = require('../errors')
 const Order = require('../models/Order')
 const Product = require('../models/Product')
 
+const fakeStripeApi = async ({ amount, currency }) => {
+  const client_secret = fakeClientSecret
+  return { client_secret, amount }
+}
+
 const createOrder = async (req, res) => {
   const { tax, shippingFee, items: cartItems } = req.body
   if (!cartItems || cartItems.length < 1) {
@@ -34,6 +39,10 @@ const createOrder = async (req, res) => {
   const paymentIntent = await fakeStripeApi({
     amount: total,
     currency: 'usd',
+  })
+  const order = await Order.create({
+    tax,
+    shippingFee,
   })
   res.send('create order')
 }
