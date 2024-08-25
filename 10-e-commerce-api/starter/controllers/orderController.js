@@ -30,6 +30,11 @@ const createOrder = async (req, res) => {
     // calculate subtotal
     subtotal += item.amount * price
   }
+  const total = tax + shippingFee + subtotal
+  const paymentIntent = await fakeStripeApi({
+    amount: total,
+    currency: 'usd',
+  })
   res.send('create order')
 }
 
