@@ -25,7 +25,9 @@ const createOrder = async (req, res) => {
       image,
       product: _id,
     }
+    // add item to order
     orderItems = [...orderItems, singleCartItem]
+    // calculate subtotal
     subtotal += item.amount * price
   }
   res.send('create order')
