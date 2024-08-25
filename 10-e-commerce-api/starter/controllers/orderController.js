@@ -4,7 +4,7 @@ const Order = require('../models/Order')
 const Product = require('../models/Product')
 
 const fakeStripeApi = async ({ amount, currency }) => {
-  const client_secret = fakeClientSecret
+  const client_secret = 'fakeClientSecret'
   return { client_secret, amount }
 }
 
