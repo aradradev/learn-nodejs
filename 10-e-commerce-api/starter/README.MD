@@ -353,7 +353,7 @@
 - [x] helmet
 - [x] xss-clean
 - [x] express-mongo-sanitize
-- [] cors (cookies!!!!)
+- [x] cors (cookies!!!!)
 
 #### Deploy on Heroku
 
