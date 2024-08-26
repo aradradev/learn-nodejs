@@ -352,7 +352,7 @@
 - [x] express-rate-limiter
 - [x] helmet
 - [x] xss-clean
-- [] express-mongo-sanitize
+- [x] express-mongo-sanitize
 - [] cors (cookies!!!!)
 
 #### Deploy on Heroku
