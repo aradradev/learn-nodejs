@@ -332,7 +332,7 @@
 
 #### Update Order
 
-- [] get order id
+- [x] get order id
 - [] get paymentIntentId (req.body)
 - [] get order
 - [] if does not exist - 404
