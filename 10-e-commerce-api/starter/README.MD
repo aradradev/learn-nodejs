@@ -350,7 +350,7 @@
 #### Security Packages
 
 - [x] express-rate-limiter
-- [] helmet
+- [x] helmet
 - [] xss-clean
 - [] express-mongo-sanitize
 - [] cors (cookies!!!!)
