@@ -338,7 +338,7 @@
 - [x] if does not exist - 404
 - [x] check permissions
 - [x] set paymentIntentId and status as 'paid'
-- [] order.save()
+- [x] order.save()
 
 #### Create Docs
 
