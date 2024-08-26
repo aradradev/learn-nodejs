@@ -54,7 +54,8 @@ const createOrder = async (req, res) => {
 }
 
 const getAllOrders = async (req, res) => {
-  res.send('get all orders')
+  const orders = await Order.find({})
+  res.status(StatusCodes.OK).json({ orders, count: orders.length })
 }
 
 const getSingleOrder = async (req, res) => {
