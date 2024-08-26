@@ -61,6 +61,10 @@ const getAllOrders = async (req, res) => {
 const getSingleOrder = async (req, res) => {
   const { id: orderId } = req.params
   console.log(orderId)
+  const order = await Order.findOne({ _id: orderId })
+  if (!order) {
+    throw new CustomError.NotFoundError(`No order with id: ${orderId}`)
+  }
   res.send('get single order')
 }
 
