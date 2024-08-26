@@ -349,7 +349,7 @@
 
 #### Security Packages
 
-- [] express-rate-limiter
+- [x] express-rate-limiter
 - [] helmet
 - [] xss-clean
 - [] express-mongo-sanitize
