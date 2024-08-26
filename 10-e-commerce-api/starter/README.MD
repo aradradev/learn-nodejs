@@ -345,7 +345,7 @@
 - [x] [Docgen Library] (https://github.com/thedevsaddam/docgen)
 - [x] Export Postman Collection
 - [x] docgen build -i fileName.json -o index.html
-- [] create index.html in public
+- [x] create index.html in public
 
 #### Security Packages
 
