@@ -2,6 +2,7 @@ const { StatusCodes } = require('http-status-codes')
 const CustomError = require('../errors')
 const Order = require('../models/Order')
 const Product = require('../models/Product')
+const { checkPermissions } = require('../utils')
 
 const fakeStripeApi = async ({ amount, currency }) => {
   const client_secret = 'fakeClientSecret'
