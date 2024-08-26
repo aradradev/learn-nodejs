@@ -351,7 +351,7 @@
 
 - [x] express-rate-limiter
 - [x] helmet
-- [] xss-clean
+- [x] xss-clean
 - [] express-mongo-sanitize
 - [] cors (cookies!!!!)
 
