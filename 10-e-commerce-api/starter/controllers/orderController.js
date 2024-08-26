@@ -59,6 +59,8 @@ const getAllOrders = async (req, res) => {
 }
 
 const getSingleOrder = async (req, res) => {
+  const { id: orderId } = req.params
+  console.log(orderId)
   res.send('get single order')
 }
 
