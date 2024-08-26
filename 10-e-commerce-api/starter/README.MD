@@ -336,7 +336,7 @@
 - [x] get paymentIntentId (req.body)
 - [x] get order
 - [x] if does not exist - 404
-- [] check permissions
+- [x] check permissions
 - [] set paymentIntentId and status as 'paid'
 - [] order.save()
 
