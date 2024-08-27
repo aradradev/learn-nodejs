@@ -57,8 +57,13 @@ const logout = async (req, res) => {
   res.status(StatusCodes.OK).json({ msg: 'user logged out!' })
 }
 
+const verifyEmail = async (req, res) => {
+  res.send('verify email')
+}
+
 module.exports = {
   register,
   login,
   logout,
+  verifyEmail,
 }
