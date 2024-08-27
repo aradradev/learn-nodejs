@@ -39,10 +39,10 @@
 #### Email Setup
 
 - [x] re-watch project 08
-- [] ethereal credentials (create account/login)
+- [x] ethereal credentials (create account/login)
 - [] install nodemailer
 - [] create (nodemailerConfig, sendEmail,
-  sendResetPasswordEmail, sendVerficationEmail) files in utils
+  sendResetPasswordEmail, sendVerificationEmail) files in utils
 
 #### Send Verification Link
 
