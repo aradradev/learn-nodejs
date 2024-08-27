@@ -31,7 +31,7 @@
 - [x] if token does not match user token 401
 - [x] if correct set
 - [x] user.isVerified = true
-- [] user.verified = Date.now()
+- [x] user.verified = Date.now()
 - [] user.verificationToken = ''
 - [] save use with instance method
 - [] return msg:'email verified'
