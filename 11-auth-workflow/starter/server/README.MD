@@ -23,7 +23,7 @@
 #### Verify Email Controller
 
 - [x] create verifyEmail in authController
-- [] get verificationToken and email from req.body
+- [x] get verificationToken and email from req.body
 - [] setup a '/verify-email' route in authRoutes
 - [] test in a Postman
 - [] check for user using email
