@@ -24,7 +24,7 @@
 
 - [x] create verifyEmail in authController
 - [x] get verificationToken and email from req.body
-- [] setup a '/verify-email' route in authRoutes
+- [x] setup a '/verify-email' route in authRoutes
 - [] test in a Postman
 - [] check for user using email
 - [] if no user 401
