@@ -4,7 +4,6 @@ const CustomError = require('../errors')
 const { attachCookiesToResponse, createTokenUser, sendVerificationEmail } = require('../utils')
 
 const crypto = require('crypto')
-const sendEmail = require('../utils/sendEmail')
 
 const register = async (req, res) => {
   const { email, name, password } = req.body
@@ -19,7 +18,7 @@ const register = async (req, res) => {
   const role = isFirstAccount ? 'admin' : 'user'
   const verificationToken = crypto.randomBytes(32).toString('hex')
   const user = await User.create({ name, email, password, role, verificationToken })
-  await sendEmail()
+  // await sendEmail()
 
   res.status(StatusCodes.CREATED).json({ msg: 'Success! Please verify your email' })
 }
