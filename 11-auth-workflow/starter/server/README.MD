@@ -33,7 +33,7 @@
 - [x] user.isVerified = true
 - [x] user.verified = Date.now()
 - [x] user.verificationToken = ''
-- [] save use with instance method
+- [x] save use with instance method
 - [] return msg:'email verified'
 
 #### Email Setup
