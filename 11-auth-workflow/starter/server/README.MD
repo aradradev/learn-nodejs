@@ -18,7 +18,7 @@
 #### Update Login Controller
 
 - [x] right after isPasswordCorrect
-- [] check if user.isVerified, if not 401
+- [x] check if user.isVerified, if not 401
 
 #### Verify Email Controller
 
