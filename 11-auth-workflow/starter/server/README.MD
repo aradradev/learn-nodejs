@@ -13,7 +13,7 @@
 
 - [x] setup fake verificationToken - 'fake token'
 - [x] remove everything after User.create()
-- [] send back success message and token
+- [x] send back success message and token
 
 #### Update Login Controller
 
