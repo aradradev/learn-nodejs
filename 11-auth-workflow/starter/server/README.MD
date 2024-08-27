@@ -40,7 +40,7 @@
 
 - [x] re-watch project 08
 - [x] ethereal credentials (create account/login)
-- [] install nodemailer
+- [x] install nodemailer
 - [] create (nodemailerConfig, sendEmail,
   sendResetPasswordEmail, sendVerificationEmail) files in utils
 
