@@ -46,7 +46,7 @@
 
 #### Send Verification Link
 
-- [] refactor sendEmail
+- [x] refactor sendEmail
 - [] setup sendVerificationEmail.js
 - [] pass arguments
 
