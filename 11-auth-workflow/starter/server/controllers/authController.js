@@ -58,7 +58,12 @@ const logout = async (req, res) => {
 }
 
 const verifyEmail = async (req, res) => {
-  res.send('verify email')
+  const { verificationToken, email } = req.body
+  if (!verificationToken || !email) {
+    throw new CustomError.BadRequestError('Please provide email and verificationToken')
+  }
+
+  res.status(StatusCodes.CREATED).json({ verificationToken, email })
 }
 
 module.exports = {
