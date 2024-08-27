@@ -1,22 +1,15 @@
 const nodemailer = require('nodemailer')
+const nodemailerConfig = require('./nodemailerConfig')
 
-const sendEmail = async () => {
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    auth: {
-      user: 'nola76@ethereal.email',
-      pass: 'UtCbj8VUQjty37x4Af',
-    },
-  })
+const sendEmail = async ({ to, subject, html }) => {
+  const transporter = nodemailer.createTransport(nodemailerConfig)
 
   // send mail with defined transport object
-  const info = await transporter.sendMail({
+  return transporter.sendMail({
     from: '"Abdoul 👻" <abdoulramanediallo44@gmail.email>', // sender address
-    to: 'bar@example.com', // list of receivers
-    subject: 'Hello ✔', // Subject line
-    text: 'Hello world?, testing', // plain text body
-    html: '<b>Hello world?</b>', // html body
+    to,
+    subject,
+    html,
   })
 }
 
