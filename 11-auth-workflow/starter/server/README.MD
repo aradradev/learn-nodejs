@@ -29,7 +29,7 @@
 - [x] check for user using email
 - [x] if no user 401
 - [x] if token does not match user token 401
-- [] if correct set
+- [x] if correct set
 - [] user.isVerified = true
 - [] user.verified = Date.now()
 - [] user.verificationToken = ''
