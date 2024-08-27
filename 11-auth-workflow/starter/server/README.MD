@@ -5,7 +5,7 @@
 #### Update User Model
 
 - [x] add following three properties
-- [] verificationToken - String
+- [x] verificationToken - String
 - [] isVerified - {type:Boolean, default:false}
 - [] verified - Date
 
