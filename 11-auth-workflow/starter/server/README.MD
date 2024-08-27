@@ -7,7 +7,7 @@
 - [x] add following three properties
 - [x] verificationToken - String
 - [x] isVerified - {type:Boolean, default:false}
-- [] verified - Date
+- [x] verified - Date
 
 #### Update Register Controller
 
