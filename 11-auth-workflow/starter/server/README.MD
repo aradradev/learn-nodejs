@@ -32,7 +32,7 @@
 - [x] if correct set
 - [x] user.isVerified = true
 - [x] user.verified = Date.now()
-- [] user.verificationToken = ''
+- [x] user.verificationToken = ''
 - [] save use with instance method
 - [] return msg:'email verified'
 
