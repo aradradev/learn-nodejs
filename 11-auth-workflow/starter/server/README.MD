@@ -34,7 +34,7 @@
 - [x] user.verified = Date.now()
 - [x] user.verificationToken = ''
 - [x] save use with instance method
-- [] return msg:'email verified'
+- [x] return msg:'email verified'
 
 #### Email Setup
 
