@@ -56,7 +56,7 @@
 - [x] refreshToken,ip,userAgent - all String and required
 - [x] isValid - Boolean, default:true
 - [x] ref user
-- [] timestamps true
+- [x] timestamps true
 
 #### Setup Token in Login Controller
 
