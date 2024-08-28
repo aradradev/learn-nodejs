@@ -57,9 +57,9 @@ const login = async (req, res) => {
   const token = await Token.create(userToken)
   const tokenUser = createTokenUser(user)
 
-  // attachCookiesToResponse({ res, user: tokenUser })
+  attachCookiesToResponse({ res, user: tokenUser, refreshToken })
 
-  res.status(StatusCodes.OK).json({ user: tokenUser, token })
+  res.status(StatusCodes.OK).json({ user: tokenUser })
 }
 const logout = async (req, res) => {
   res.cookie('token', 'logout', {
