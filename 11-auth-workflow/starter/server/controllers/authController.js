@@ -54,7 +54,7 @@ const login = async (req, res) => {
   const ip = req.ip
   const userToken = { refreshToken, ip, userAgent, user: user._id }
 
-  const token = await Token.create(userToken)
+  await Token.create(userToken)
   const tokenUser = createTokenUser(user)
 
   attachCookiesToResponse({ res, user: tokenUser, refreshToken })
