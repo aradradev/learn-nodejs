@@ -17,7 +17,7 @@ const authenticateUser = async (req, res, next) => {
       throw new CustomError.UnauthenticatedError('Invalid Credentials')
     }
     attachCookiesToResponse({ res, user: payload.user, refreshToken: existingToken.refreshToken })
-    re.user = payload.user
+    req.user = payload.user
     next()
   } catch (error) {
     throw new CustomError.UnauthenticatedError('Authentication Invalid')
