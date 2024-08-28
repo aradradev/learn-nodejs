@@ -19,6 +19,9 @@ const register = async (req, res) => {
   const verificationToken = crypto.randomBytes(32).toString('hex')
   const user = await User.create({ name, email, password, role, verificationToken })
   // await sendEmail()
+  const origin = 'http://localhost:3000'
+
+  await sendVerificationEmail({ name: user.name, email: user.email, verificationToken: user.verificationToken, origin })
 
   res.status(StatusCodes.CREATED).json({ msg: 'Success! Please verify your email' })
 }
