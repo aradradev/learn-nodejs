@@ -5,9 +5,11 @@ const authenticateUser = async (req, res, next) => {
   const { accessTokenJWT, refreshTokenJWT } = req.signedCookies
 
   try {
-    const { name, userId, role } = isTokenValid({ token })
-    req.user = { name, userId, role }
-    next()
+    if (accessTokenJWT) {
+      const payload = isTokenValid(accessTokenJWT)
+      req.user = payload.user
+      return next()
+    }
   } catch (error) {
     throw new CustomError.UnauthenticatedError('Authentication Invalid')
   }
