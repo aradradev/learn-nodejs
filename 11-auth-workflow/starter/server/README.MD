@@ -55,7 +55,7 @@
 - [x] create Token.js in models
 - [x] refreshToken,ip,userAgent - all String and required
 - [x] isValid - Boolean, default:true
-- [] ref user
+- [x] ref user
 - [] timestamps true
 
 #### Setup Token in Login Controller
