@@ -134,6 +134,7 @@ const forgotPassword = async (req, res) => {
   res.status(StatusCodes.OK).json({ msg: 'Please check your email for reset password link' })
 }
 const resetPassword = async (req, res) => {
+  const { email, token, password } = req.body
   res.send('reset password')
 }
 
