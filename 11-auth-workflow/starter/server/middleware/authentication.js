@@ -1,5 +1,6 @@
 const CustomError = require('../errors')
-const { isTokenValid } = require('../utils')
+const Token = require('../models/Token')
+const { isTokenValid, attachCookiesToResponse } = require('../utils')
 
 const authenticateUser = async (req, res, next) => {
   const { accessTokenJWT, refreshTokenJWT } = req.signedCookies
@@ -10,6 +11,14 @@ const authenticateUser = async (req, res, next) => {
       req.user = payload.user
       return next()
     }
+    const payload = isTokenValid(refreshTokenJWT)
+    const existingToken = await Token.findOne({ user: payload.user.userId })
+    if (!existingToken || !existingToken?.isValid) {
+      throw new CustomError.UnauthenticatedError('Invalid Credentials')
+    }
+    attachCookiesToResponse({ res, user: payload.user, refreshToken: existingToken.refreshToken })
+    re.user = payload.user
+    next()
   } catch (error) {
     throw new CustomError.UnauthenticatedError('Authentication Invalid')
   }

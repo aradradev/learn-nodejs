@@ -15,7 +15,7 @@ const attachCookiesToResponse = ({ res, user, refreshToken }) => {
 
   res.cookie('accessTokenJWT', accessTokenJWT, {
     httpOnly: true,
-    maxAge: 1000 * 60 * 15,
+    maxAge: 1000,
     secure: process.env.NODE_ENV === 'production',
     signed: true,
   })
