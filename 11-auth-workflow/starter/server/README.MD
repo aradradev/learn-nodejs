@@ -54,7 +54,7 @@
 
 - [x] create Token.js in models
 - [x] refreshToken,ip,userAgent - all String and required
-- [] isValid - Boolean, default:true
+- [x] isValid - Boolean, default:true
 - [] ref user
 - [] timestamps true
 
