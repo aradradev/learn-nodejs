@@ -1,7 +1,13 @@
 const User = require('../models/User')
 const { StatusCodes } = require('http-status-codes')
 const CustomError = require('../errors')
-const { attachCookiesToResponse, createTokenUser, sendVerificationEmail, sendResetPasswordEmail } = require('../utils')
+const {
+  attachCookiesToResponse,
+  createTokenUser,
+  sendVerificationEmail,
+  sendResetPasswordEmail,
+  hashToken,
+} = require('../utils')
 
 const crypto = require('crypto')
 const Token = require('../models/Token')
@@ -126,7 +132,7 @@ const forgotPassword = async (req, res) => {
 
     const tenMinutes = 1000 * 60 * 10 // 10 minutes
     const passwordTokenExpirationDate = new Date(Date.now() + tenMinutes)
-    user.passwordToken = passwordToken
+    user.passwordToken = hashToken(passwordToken)
     user.passwordTokenExpirationDate = passwordTokenExpirationDate
 
     await user.save()
@@ -141,7 +147,7 @@ const resetPassword = async (req, res) => {
   const user = await User.findOne({ email })
   if (user) {
     const currentDate = new Date()
-    if (user.passwordToken === token && user.passwordTokenExpirationDate > currentDate) {
+    if (user.passwordToken === hashToken(token) && user.passwordTokenExpirationDate > currentDate) {
       user.password = password
       user.passwordToken = null
       user.passwordTokenExpirationDate = null
