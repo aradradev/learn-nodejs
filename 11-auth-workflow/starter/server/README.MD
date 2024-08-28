@@ -52,7 +52,7 @@
 
 #### Token Model
 
-- [] create Token.js in models
+- [x] create Token.js in models
 - [] refreshToken,ip,userAgent - all String and required
 - [] isValid - Boolean, default:true
 - [] ref user
