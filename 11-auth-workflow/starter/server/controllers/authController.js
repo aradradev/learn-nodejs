@@ -47,7 +47,23 @@ const login = async (req, res) => {
     throw new CustomError.UnauthenticatedError('Please verify your email')
   }
 
+  const tokenUser = createTokenUser(user)
+  // create refresh token
   let refreshToken = ''
+
+  // check existing token
+  const existingToken = await Token.findOne({ user: user._id })
+  if (existingToken) {
+    const { isValid } = existingToken
+    if (!isValid) {
+      throw new CustomError.UnauthenticatedError('Invalid Credentials')
+    }
+    refreshToken = existingToken.refreshToken
+    attachCookiesToResponse({ res, user: tokenUser, refreshToken })
+    res.status(StatusCodes.OK).json({ user: tokenUser })
+    return
+  }
+
   refreshToken = crypto.randomBytes(32).toString('hex')
 
   const userAgent = req.headers['user-agent']
@@ -55,7 +71,6 @@ const login = async (req, res) => {
   const userToken = { refreshToken, ip, userAgent, user: user._id }
 
   await Token.create(userToken)
-  const tokenUser = createTokenUser(user)
 
   attachCookiesToResponse({ res, user: tokenUser, refreshToken })
 
